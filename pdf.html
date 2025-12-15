@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfa Digital | Presentación de Logotipo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #F5F5F0;
+            color: #334155;
+            -webkit-print-color-adjust: exact; /* Para que salga bien en el PDF */
+            print-color-adjust: exact;
+        }
+        .grid-bg {
+            background-size: 40px 40px;
+            background-image:
+                linear-gradient(to right, rgba(30, 41, 59, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(30, 41, 59, 0.05) 1px, transparent 1px);
+        }
+        .canvas-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Ajustes para impresión */
+        @media print {
+            body { padding: 0; }
+            .shadow-xl, .shadow-lg, .shadow-sm { box-shadow: none !important; border: 1px solid #ddd; }
+        }
+    </style>
+</head>
+<body class="py-12 px-4 md:px-8">
+
+    <div class="max-w-5xl mx-auto">
+        
+        <header class="text-center mb-16">
+            <p class="text-xs font-bold text-[#FF6B6B] tracking-widest uppercase mb-2">Identidad Visual v1.0</p>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#1E293B] mb-4">El Símbolo de Alfa.</h1>
+            <p class="text-slate-500 max-w-2xl mx-auto">
+                Una abstracción geométrica que fusiona la letra 'A' (inicio/liderazgo) con una flecha ascendente (progreso digital).
+            </p>
+        </header>
+
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                
+                <div class="p-12 flex flex-col items-center justify-center bg-white relative grid-bg">
+                    <div class="canvas-container w-64 h-64 relative">
+                        <canvas id="mainLogoCanvas" width="300" height="300"></canvas>
+                    </div>
+                    <p class="mt-6 text-sm font-bold text-[#1E293B]">Isotipo Principal</p>
+                </div>
+
+                <div class="p-12 bg-[#1E293B] text-white flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold mb-6">Racional Creativo</h3>
+                    <ul class="space-y-6">
+                        <li class="flex gap-4">
+                            <span class="text-[#FF6B6B] font-bold text-xl">01.</span>
+                            <div>
+                                <h4 class="font-bold text-lg">Estructura Sólida</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed">La base ancha triangular en color Midnight Blue representa la estabilidad técnica y la ingeniería robusta.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="text-[#FF6B6B] font-bold text-xl">02.</span>
+                            <div>
+                                <h4 class="font-bold text-lg">El Acento Humano</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed">El elemento Coral no es solo decorativo; es el "puente" o el "cursor" que completa la forma, simbolizando la interacción humana.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="text-[#FF6B6B] font-bold text-xl">03.</span>
+                            <div>
+                                <h4 class="font-bold text-lg">Direccionalidad</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed">La forma general apunta hacia arriba, indicando crecimiento y escalabilidad para tus clientes.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center">
+                <span class="text-xs text-slate-400 font-bold uppercase mb-6 w-full text-left">Logotipo Horizontal</span>
+                <canvas id="logoHorizontal" width="300" height="80"></canvas>
+            </div>
+
+            <div class="bg-[#1E293B] p-8 rounded-2xl shadow-sm flex flex-col items-center">
+                <span class="text-xs text-slate-500 font-bold uppercase mb-6 w-full text-left">Versión Dark Mode</span>
+                <canvas id="logoDark" width="300" height="80"></canvas>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center">
+                <span class="text-xs text-slate-400 font-bold uppercase mb-6 w-full text-left">App Icon (Favicon)</span>
+                <div class="w-20 h-20 rounded-2xl bg-[#1E293B] shadow-lg flex items-center justify-center relative overflow-hidden">
+                    <canvas id="appIconCanvas" width="60" height="60"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-slate-200 pt-12 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <h3 class="font-bold text-[#1E293B] mb-1">Tipografía Corporativa</h3>
+                <p class="text-slate-500 text-sm">Manrope (Google Fonts)</p>
+            </div>
+            <div class="text-3xl md:text-5xl font-extrabold text-[#1E293B] tracking-tight">
+                Aa Bb Cc <span class="text-[#FF6B6B]">123</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // --- DRAWING FUNCTIONS ---
+        
+        // Common function to draw the "A" shape
+        function drawIsotype(ctx, x, y, size, primaryColor, accentColor) {
+            // Dimensions relative to size
+            const half = size / 2;
+            const height = size * 0.85; // slightly shorter than width for stability
+            
+            // 1. Left Leg (The Solid Base) - Midnight Blue
+            ctx.fillStyle = primaryColor;
+            ctx.beginPath();
+            // Top point (slightly offset left to create gap)
+            ctx.moveTo(x + half - (size * 0.1), y); 
+            // Bottom Left
+            ctx.lineTo(x, y + height);
+            // Bottom Right (Inside leg)
+            ctx.lineTo(x + (size * 0.35), y + height);
+            // Inner Top
+            ctx.lineTo(x + half, y + (height * 0.35));
+            ctx.closePath();
+            ctx.fill();
+
+            // 2. Right Leg (The Structure) - Midnight Blue
+            ctx.beginPath();
+            // Top point (slightly offset right)
+            ctx.moveTo(x + half + (size * 0.1), y); 
+            // Bottom Right
+            ctx.lineTo(x + size, y + height);
+            // Bottom Left (Inside leg)
+            ctx.lineTo(x + size - (size * 0.35), y + height);
+            // Inner Top
+            ctx.lineTo(x + half, y + (height * 0.35));
+            ctx.closePath();
+            ctx.fill();
+
+            // 3. The Crossbar / Accelerator - Digital Coral
+            // It's not a bar, it's a triangle pointing up/right integrated
+            ctx.fillStyle = accentColor;
+            ctx.beginPath();
+            // Positioned in the lower center
+            ctx.moveTo(x + half, y + (height * 0.5)); 
+            ctx.lineTo(x + half + (size * 0.2), y + (height * 0.75));
+            ctx.lineTo(x + half - (size * 0.2), y + (height * 0.75));
+            ctx.closePath();
+            ctx.fill();
+            
+            // Add a small circle at the very top (The "Digital Dot")
+            ctx.beginPath();
+            ctx.arc(x + half, y - (size * 0.1), size * 0.06, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        // 1. Main Construction Canvas
+        const ctxMain = document.getElementById('mainLogoCanvas').getContext('2d');
+        // Helper grid lines
+        ctxMain.strokeStyle = '#e2e8f0';
+        ctxMain.lineWidth = 1;
+        ctxMain.beginPath();
+        ctxMain.moveTo(150, 0); ctxMain.lineTo(150, 300); // Center V
+        ctxMain.moveTo(0, 150); ctxMain.lineTo(300, 150); // Center H
+        ctxMain.stroke();
+        
+        // Draw Isotype centered
+        // x: 50, y: 70, size: 200
+        drawIsotype(ctxMain, 50, 70, 200, '#1E293B', '#FF6B6B');
+
+        // 2. Horizontal Logo
+        const ctxHoriz = document.getElementById('logoHorizontal').getContext('2d');
+        // Draw Icon small
+        drawIsotype(ctxHoriz, 10, 20, 50, '#1E293B', '#FF6B6B');
+        // Draw Text
+        ctxHoriz.fillStyle = '#1E293B';
+        ctxHoriz.font = "800 36px Manrope";
+        ctxHoriz.fillText("ALFA", 75, 58);
+        ctxHoriz.fillStyle = '#FF6B6B'; // The dot
+        ctxHoriz.fillText(".", 168, 58); // Manual kerning visual
+        ctxHoriz.fillStyle = '#64748b'; // Tagline
+        ctxHoriz.font = "500 14px Manrope";
+        ctxHoriz.fillText("AGENCY", 185, 58);
+
+        // 3. Dark Mode Logo
+        const ctxDark = document.getElementById('logoDark').getContext('2d');
+        // Draw Icon small (White primary)
+        drawIsotype(ctxDark, 10, 20, 50, '#FFFFFF', '#FF6B6B');
+        // Draw Text
+        ctxDark.fillStyle = '#FFFFFF';
+        ctxDark.font = "800 36px Manrope";
+        ctxDark.fillText("ALFA", 75, 58);
+        ctxDark.fillStyle = '#FF6B6B';
+        ctxDark.fillText(".", 168, 58);
+        ctxDark.fillStyle = '#94a3b8'; // Lighter slate for dark mode
+        ctxDark.font = "500 14px Manrope";
+        ctxDark.fillText("AGENCY", 185, 58);
+
+        // 4. App Icon Canvas (Inside the rounded square)
+        const ctxIcon = document.getElementById('appIconCanvas').getContext('2d');
+        // Draw Isotype (White base because bg is Dark Blue)
+        drawIsotype(ctxIcon, 5, 12, 50, '#FFFFFF', '#FF6B6B');
+
+    </script>
+</body>
+</html>

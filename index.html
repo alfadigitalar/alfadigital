@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alfa Digital | Agencia de Transformación Digital Premium</title>
+  <link rel="shortcut icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/logo Alfa Digital sin fondo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- SEO & Metadatos -->
+  <meta name="description"
+    content="Alfa Digital: Agencia de diseño y desarrollo web en Argentina. Transformamos ideas en máquinas de ventas con webs rápidas, modernas y efectivas.">
+  <meta name="keywords"
+    content="desarrollo web, diseño web, agencia digital, argentina, software, ecommerce, landing page, seo">
+  <meta name="author" content="Alfa Digital">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alfa-digital.vercel.app/">
+  <meta property="og:title" content="Alfa Digital | Agencia de Transformación Digital Premium">
+  <meta property="og:description"
+    content="Creamos sitios web que venden. Diseño inteligente, desarrollo limpio y estrategia digital.">
+  <meta property="og:image" content="img/logo Alfa Digital sin fondo.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://alfa-digital.vercel.app/">
+  <meta property="twitter:title" content="Alfa Digital | Agencia de Transformación Digital Premium">
+  <meta property="twitter:description"
+    content="Creamos sitios web que venden. Diseño inteligente, desarrollo limpio y estrategia digital.">
+  <meta property="twitter:image" content="img/logo Alfa Digital sin fondo.png">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Content-Security-Policy"
+    content="upgrade-insecure-requests; default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co;">
+
+  <!-- Configuración de Colores Tailwind -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            alfa: {
+              base: "#F5F5F0",
+              dark: "#1E293B",
+              coral: "#FF6B6B",
+              slate: "#334155",
+            },
+          },
+          animation: {
+            blob: "blob 7s infinite",
+            scroll: "scroll 20s linear infinite",
+          },
+          keyframes: {
+            blob: {
+              "0%": { transform: "translate(0px, 0px) scale(1)" },
+              "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+              "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+              "100%": { transform: "translate(0px, 0px) scale(1)" },
+            },
+            scroll: {
+              "0%": { transform: "translateX(0)" },
+              "100%": { transform: "translateX(-100%)" },
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+
+</head>
+
+<body class="antialiased selection:bg-alfa-coral selection:text-white">
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 nav-blur transition-all duration-300" id="navbar">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center cursor-pointer group" onclick="window.scrollTo(0,0)">
+          <span
+            class="text-2xl font-extrabold tracking-tighter text-alfa-dark group-hover:opacity-80 transition">ALFA<span
+              class="text-alfa-coral">.</span></span>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 items-center">
+          <a href="#servicios"
+            class="text-sm font-semibold text-slate-600 hover:text-alfa-coral transition relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-alfa-coral after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">Servicios</a>
+          <a href="#proyectos"
+            class="text-sm font-semibold text-slate-600 hover:text-alfa-coral transition relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-alfa-coral after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">Proyectos</a>
+          <a href="#planes"
+            class="text-sm font-semibold text-slate-600 hover:text-alfa-coral transition relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-alfa-coral after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">Planes</a>
+          <a href="#equipo"
+            class="text-sm font-semibold text-slate-600 hover:text-alfa-coral transition relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-alfa-coral after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">Equipo</a>
+          <a href="#contacto"
+            class="bg-alfa-dark text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-slate-700 transition shadow-lg shadow-slate-300/50 transform hover:-translate-y-0.5">
+            Iniciar Proyecto
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="text-alfa-dark text-2xl focus:outline-none">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Menu Panel -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-2xl">
+      <div class="px-4 pt-2 pb-6 space-y-2">
+        <a href="#servicios"
+          class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">Servicios</a>
+        <a href="#proyectos"
+          class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">Proyectos</a>
+        <a href="#planes"
+          class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">Planes</a>
+        <a href="#equipo"
+          class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">Equipo</a>
+        <a href="#contacto"
+          class="block px-3 py-3 text-base font-bold text-alfa-coral hover:bg-slate-50 rounded-md">Contactar</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 flex flex-col items-center text-center overflow-hidden"
+    id="hero">
+    <!-- Background Canvas -->
+    <canvas id="heroCanvas" class="absolute inset-0 w-full h-full -z-0"></canvas>
+
+    <!-- Background Blobs (Optional - keeping them for depth behind canvas if needed, or removing if canvas is enough. Let's keep distinct blobs for color) -->
+    <div
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-100 to-red-50 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob -z-10">
+    </div>
+
+    <!-- Content Wrapper -->
+    <div class="relative z-10 flex flex-col items-center max-w-screen-2xl mx-auto w-full">
+      <div
+        class="reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-slate-200 mb-8 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-alfa-coral animate-pulse"></span>
+        <span class="text-xs font-bold text-slate-500 uppercase tracking-wide">🚀 Somos Nuevos, Pero Somos Buenos</span>
+      </div>
+
+      <h1
+        class="reveal delay-100 text-5xl md:text-7xl font-extrabold text-alfa-dark mb-6 tracking-tight max-w-5xl leading-tight">
+        Tu marca merece una web
+        <br class="hidden md:block" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B6B] via-[#FF8C8C] to-[#1E293B]">que
+          convierte en ventas.</span>
+      </h1>
+
+      <p
+        class="reveal delay-200 mt-4 max-w-2xl text-xl text-slate-600 mb-10 leading-relaxed bg-white/30 backdrop-blur-sm rounded-xl p-2">
+        Somos jóvenes, apasionados y obsesionados con resultados. Combinamos diseño inteligente, desarrollo limpio y
+        estrategia digital para webs que realmente funcionan.
+      </p>
+
+      <div class="reveal delay-300 flex flex-col sm:flex-row gap-4">
+        <a href="#contacto"
+          class="bg-gradient-to-r from-alfa-coral to-[#ff5252] text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-red-400 transition shadow-xl shadow-red-200 hover:-translate-y-1 flex items-center justify-center gap-2 group">
+          Comenzar Proyecto <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition"></i>
+        </a>
+        <a href="#proyectos"
+          class="bg-white/80 backdrop-blur text-alfa-dark border-2 border-alfa-dark px-8 py-4 rounded-full font-bold text-lg hover:bg-alfa-dark hover:text-white transition flex items-center justify-center gap-2 hover:-translate-y-1">
+          <i class="far fa-eye"></i> Ver Trabajos
+        </a>
+      </div>
+
+      <div
+        class="absolute -bottom-32 left-1/2 transform -translate-x-1/2 animate-bounce text-slate-300 pointer-events-none">
+        <i class="fas fa-chevron-down text-2xl"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Infinite Marquee -->
+  <div class="py-6 bg-alfa-dark overflow-hidden marquee-container relative z-10">
+    <div class="flex animate-scroll whitespace-nowrap">
+      <div class="flex items-center gap-12 mx-6 text-slate-400 font-bold text-xl uppercase tracking-widest">
+        <span>Estrategia</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+        <span>UI/UX Design</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+        <span>Desarrollo Web</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+        <span>Branding</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+        <span>E-Commerce</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+        <span>SEO</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+        <span>Estrategia</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+        <span>UI/UX Design</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+        <span>Desarrollo Web</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+        <span>Branding</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+        <span>E-Commerce</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="flex items-center gap-12 mx-6 text-slate-400 font-bold text-xl uppercase tracking-widest">
+        <span>Estrategia</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+        <span>UI/UX Design</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+        <span>Desarrollo Web</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+        <span>Branding</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+        <span>E-Commerce</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+        <span>SEO</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+        <span>Estrategia</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+        <span>UI/UX Design</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+        <span>Desarrollo Web</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+        <span>Branding</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+        <span>E-Commerce</span>
+        <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <section id="servicios" class="py-24 bg-white relative overflow-hidden">
+    <div
+      class="absolute top-0 left-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10">
+    </div>
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold text-alfa-dark mb-4">
+          Servicios que Generan ROI
+        </h2>
+        <p class="text-slate-600 max-w-2xl mx-auto text-lg">
+          Cada solución está diseñada para convertir visitantes en clientes. No hacemos webs bonitas, hacemos máquinas
+          de ventas.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div
+          class="reveal p-8 bg-gradient-to-br from-white to-slate-50 rounded-3xl hover:shadow-2xl transition duration-300 group hover:-translate-y-3 border border-slate-200 hover:border-alfa-coral">
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-alfa-coral to-[#ff8c8c] rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg group-hover:scale-110 transition text-white">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3 class="text-xl font-bold text-alfa-dark mb-3">
+            Diseño Web & UI/UX
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Diseños que funcionan. Interfaces limpias, modernas y optimizadas para convertir visitantes en clientes.
+          </p>
+          <ul class="text-sm text-slate-600 space-y-2">
+            <li><i class="fas fa-check text-alfa-coral mr-2"></i>Responsive Design</li>
+            <li><i class="fas fa-check text-alfa-coral mr-2"></i>A/B Testing</li>
+            <li><i class="fas fa-check text-alfa-coral mr-2"></i>SEO Optimizado</li>
+          </ul>
+        </div>
+        <div
+          class="reveal delay-100 p-8 bg-gradient-to-br from-white to-slate-50 rounded-3xl hover:shadow-2xl transition duration-300 group hover:-translate-y-3 border border-slate-200 hover:border-alfa-coral">
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg group-hover:scale-110 transition text-white">
+            <i class="fas fa-layer-group"></i>
+          </div>
+          <h3 class="text-xl font-bold text-alfa-dark mb-3">
+            Full Stack Dev
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Desde landing pages lightning-fast hasta plataformas SAAS complejas. Código limpio y escalable con tech
+            moderno.
+          </p>
+          <ul class="text-sm text-slate-600 space-y-2">
+            <li><i class="fas fa-check text-alfa-coral mr-2"></i>React / Next.js</li>
+            <li><i class="fas fa-check text-alfa-coral mr-2"></i>Node.js / Backend</li>
+            <li><i class="fas fa-check text-alfa-coral mr-2"></i>Bases de Datos</li>
+          </ul>
+        </div>
+        <div
+          class="reveal delay-200 p-8 bg-gradient-to-br from-white to-slate-50 rounded-3xl hover:shadow-2xl transition duration-300 group hover:-translate-y-3 border border-slate-200 hover:border-alfa-coral">
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg group-hover:scale-110 transition text-white">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3 class="text-xl font-bold text-alfa-dark mb-3">
+            Branding Digital
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Identidades memorables que conectan emocionalmente. Creamos marcas que perduran en la memoria de tus
+            clientes.
+          </p>
+          <ul class="text-sm text-slate-600 space-y-2">
+            <li><i class="fas fa-check text-alfa-coral mr-2"></i>Identidad Visual</li>
+            <li><i class="fas fa-check text-alfa-coral mr-2"></i>Estrategia de Brand</li>
+            <li><i class="fas fa-check text-alfa-coral mr-2"></i>Copywriting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section (WITH DYNAMIC PREVIEW) -->
+  <section id="proyectos" class="py-24 bg-alfa-dark text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-alfa-coral opacity-5 blur-[100px] rounded-full"></div>
+
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Proyectos Destacados
+          </h2>
+          <p class="text-slate-400 max-w-xl">
+            Donde la precisión técnica se encuentra con el arte.
+          </p>
+        </div>
+
+        <div class="flex space-x-2 mt-6 md:mt-0 overflow-x-auto pb-2 md:pb-0">
+          <button onclick="filterProjects('all')"
+            class="filter-btn active px-5 py-2 rounded-full text-sm font-bold bg-white text-alfa-dark transition hover:bg-slate-200 ring-2 ring-white">
+            Todos
+          </button>
+          <button onclick="filterProjects('web')"
+            class="filter-btn px-5 py-2 rounded-full text-sm font-bold border border-slate-600 text-slate-300 hover:border-white hover:text-white transition">
+            Web
+          </button>
+          <button onclick="filterProjects('branding')"
+            class="filter-btn px-5 py-2 rounded-full text-sm font-bold border border-slate-600 text-slate-300 hover:border-white hover:text-white transition">
+            Branding
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
+        <!-- Project 1: AUTO PREVIEW -->
+        <a href="http://mila-crush.vercel.app/" target="_blank" rel="noopener noreferrer"
+          class="reveal project-card group relative rounded-2xl overflow-hidden bg-slate-800 w-full aspect-[16/10] cursor-pointer shadow-2xl hover:shadow-2xl hover:shadow-alfa-coral/50 transition"
+          data-category="web">
+          <img src="img/mila-crush-preview.png" alt="Vista previa de Mila Crush"
+            class="absolute inset-0 w-full h-full object-cover object-top transition duration-700 group-hover:scale-110" />
+
+          <!-- Overlay -->
+          <div
+            class="project-overlay absolute inset-0 bg-alfa-dark/95 opacity-0 transition duration-300 flex flex-col justify-center items-center text-center p-6 backdrop-blur-sm">
+            <h3 class="text-2xl font-bold mb-2">Mila Crush 🍔</h3>
+            <p class="text-sm text-slate-300 mb-6">
+              Landing Page + Gestión de Pedidos
+            </p>
+            <div
+              class="text-alfa-coral text-xs font-bold uppercase tracking-widest border border-alfa-coral px-4 py-2 rounded hover:bg-alfa-coral hover:text-white transition inline-block">
+              Ver Proyecto
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 2: CV Argentina -->
+        <a href="https://cvarg-ten.vercel.app/" target="_blank" rel="noopener noreferrer"
+          class="reveal delay-100 project-card group relative rounded-2xl overflow-hidden bg-slate-800 w-full aspect-[16/10] cursor-pointer shadow-2xl hover:shadow-2xl hover:shadow-alfa-coral/50 transition"
+          data-category="web">
+          <img src="img/cv-argentina-preview.png" alt="Vista previa de CV Argentina"
+            class="absolute inset-0 w-full h-full object-cover object-top transition duration-700 group-hover:scale-110" />
+
+          <!-- Overlay -->
+          <div
+            class="project-overlay absolute inset-0 bg-alfa-dark/95 opacity-0 transition duration-300 flex flex-col justify-center items-center text-center p-6 backdrop-blur-sm">
+            <h3 class="text-2xl font-bold mb-2">CV Argentina 💼</h3>
+            <p class="text-sm text-slate-300 mb-6">Plataforma Profesional</p>
+            <div
+              class="text-alfa-coral text-xs font-bold uppercase tracking-widest border border-alfa-coral px-4 py-2 rounded hover:bg-alfa-coral hover:text-white transition inline-block">
+              Ver Proyecto
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plans / Pricing Section -->
+  <section id="casos-exito" class="py-24 bg-gradient-to-b from-slate-50 to-white">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold text-alfa-dark mb-4">
+          Nuestros Trabajos
+        </h2>
+        <p class="text-slate-600 max-w-2xl mx-auto text-lg">
+          Aquí está lo que hemos hecho. Resultados reales de clientes reales.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Case 1 -->
+        <div
+          class="reveal bg-white p-8 rounded-2xl border border-slate-200 hover:border-alfa-coral hover:shadow-xl transition group">
+          <div class="flex items-center gap-4 mb-6">
+            <img src="img/logos_1. Rondo Rojo.png" alt="Mila Crush Logo"
+              class="w-12 h-12 rounded-full object-cover object-center shadow-sm border border-slate-100">
+            <div>
+              <h4 class="font-bold text-alfa-dark">Mila Crush</h4>
+              <p class="text-xs text-slate-500">FastFood Emprendimiento</p>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-slate-600">Tráfico Web</span>
+              <span class="font-bold text-2xl text-alfa-coral">+340%</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-slate-600">Pedidos Online</span>
+              <span class="font-bold text-2xl text-green-500">+210%</span>
+            </div>
+            <div class="h-px bg-slate-100 my-3"></div>
+            <p class="text-sm text-slate-600">
+              <strong>Landing page + Integración de pedidos online</strong>
+            </p>
+          </div>
+        </div>
+
+        <!-- Case 2 -->
+        <div
+          class="reveal delay-100 bg-white p-8 rounded-2xl border border-slate-200 hover:border-alfa-coral hover:shadow-xl transition group">
+          <div class="flex items-center gap-4 mb-6">
+            <img src="img/logo.png" alt="CV Argentina Logo"
+              class="w-12 h-12 rounded-full object-cover object-center shadow-sm border border-slate-100">
+            <div>
+              <h4 class="font-bold text-alfa-dark">CV Argentina</h4>
+              <p class="text-xs text-slate-500">Plataforma Profesional</p>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-slate-600">Plataforma Completa</span>
+              <span class="font-bold text-xl text-alfa-coral">✓ Funcional</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-slate-600">Base de Datos</span>
+              <span class="font-bold text-xl text-green-500">✓ Live</span>
+            </div>
+            <div class="h-px bg-slate-100 my-3"></div>
+            <p class="text-sm text-slate-600">
+              <strong>Full Stack + Gestión de Datos</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plans / Pricing Section -->
+  <section id="planes" class="py-24 bg-white">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold text-alfa-dark mb-4">
+          Nuestros Planes
+        </h2>
+        <p class="text-slate-600 max-w-2xl mx-auto text-lg">
+          Cada proyecto es único. El precio depende de tus necesidades específicas. Aquí están nuestras opciones base.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Plan 1 -->
+        <div
+          class="reveal flex flex-col bg-white border-2 border-slate-200 rounded-3xl p-8 hover:border-alfa-coral hover:shadow-2xl transition duration-300 relative">
+          <div
+            class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-slate-100 text-slate-600 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+            Ideal para Startups
+          </div>
+          <h3 class="text-2xl font-bold text-alfa-dark text-center mb-2">
+            Ágil 🚀
+          </h3>
+          <p class="text-center text-slate-600 text-sm mb-8">
+            Landing Pages que venden
+          </p>
+
+          <div class="flex-grow space-y-3 mb-8">
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-alfa-coral mt-1 flex-shrink-0"></i>
+              <span class="text-sm text-slate-600">Diseño UX/UI Premium</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-alfa-coral mt-1 flex-shrink-0"></i>
+              <span class="text-sm text-slate-600">Desarrollo Responsive</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-alfa-coral mt-1 flex-shrink-0"></i>
+              <span class="text-sm text-slate-600">SEO Básico Incluido</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-alfa-coral mt-1 flex-shrink-0"></i>
+              <span class="text-sm text-slate-600">Formulario + Email</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-alfa-coral mt-1 flex-shrink-0"></i>
+              <span class="text-sm text-slate-600">Deploy en Vercel</span>
+            </div>
+          </div>
+          <a href="#contacto"
+            class="block w-full py-3 text-center border-2 border-alfa-dark text-alfa-dark font-bold rounded-xl hover:bg-alfa-dark hover:text-white transition">Consultar</a>
+        </div>
+
+        <!-- Plan 2 (DESTACADO) -->
+        <div
+          class="reveal delay-100 flex flex-col bg-gradient-to-br from-alfa-dark to-slate-800 text-white rounded-3xl p-8 shadow-2xl relative transform md:scale-105 hover:shadow-3xl transition">
+          <div
+            class="absolute -top-4 right-6 bg-gradient-to-r from-alfa-coral to-[#ff8c8c] text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
+            ⭐ MÁS POPULAR
+          </div>
+          <h3 class="text-2xl font-bold text-center mb-2">Integral 🎨</h3>
+          <p class="text-center text-slate-300 text-sm mb-8">
+            Tu negocio, llave en mano
+          </p>
+
+          <div class="flex-grow space-y-3 mb-8">
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-alfa-coral mt-1 flex-shrink-0"></i>
+              <span class="text-sm">Diseño & Desarrollo Full</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-alfa-coral mt-1 flex-shrink-0"></i>
+              <span class="text-sm"><strong>Dominio .COM (1 año)</strong></span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-alfa-coral mt-1 flex-shrink-0"></i>
+              <span class="text-sm"><strong>Hosting Incluido</strong></span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-alfa-coral mt-1 flex-shrink-0"></i>
+              <span class="text-sm">3 Cuentas Email Corporativo</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-alfa-coral mt-1 flex-shrink-0"></i>
+              <span class="text-sm"><strong>Soporte 30 días gratis</strong></span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-alfa-coral mt-1 flex-shrink-0"></i>
+              <span class="text-sm">Google Analytics Setup</span>
+            </div>
+          </div>
+          <a href="#contacto"
+            class="block w-full py-3 text-center bg-gradient-to-r from-alfa-coral to-[#ff5252] text-white font-bold rounded-xl hover:shadow-lg hover:shadow-red-500/50 transition transform hover:-translate-y-1">Solicitar
+            Consulta</a>
+        </div>
+
+        <!-- Plan 3 -->
+        <div
+          class="reveal delay-200 flex flex-col bg-white border-2 border-slate-200 rounded-3xl p-8 hover:border-alfa-coral hover:shadow-2xl transition duration-300 relative">
+          <div
+            class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-slate-100 text-slate-600 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+            Para Empresas
+          </div>
+          <h3 class="text-2xl font-bold text-alfa-dark text-center mb-2">
+            Enterprise 🏢
+          </h3>
+          <p class="text-center text-slate-600 text-sm mb-8">
+            E-Commerce, SAAS, Sistemas Complejos
+          </p>
+
+          <div class="flex-grow space-y-3 mb-8">
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-alfa-coral mt-1 flex-shrink-0"></i>
+              <span class="text-sm text-slate-600">Arquitectura Escalable</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-alfa-coral mt-1 flex-shrink-0"></i>
+              <span class="text-sm text-slate-600">Admin Panel (CMS) Custom</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-alfa-coral mt-1 flex-shrink-0"></i>
+              <span class="text-sm text-slate-600">Integración de Pagos</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-alfa-coral mt-1 flex-shrink-0"></i>
+              <span class="text-sm text-slate-600">API Propias</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-alfa-coral mt-1 flex-shrink-0"></i>
+              <span class="text-sm text-slate-600">Soporte 24/7 Premium</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-alfa-coral mt-1 flex-shrink-0"></i>
+              <span class="text-sm text-slate-600">Consultoría Incluida</span>
+            </div>
+          </div>
+          <a href="#contacto"
+            class="block w-full py-3 text-center border-2 border-alfa-dark text-alfa-dark font-bold rounded-xl hover:bg-alfa-dark hover:text-white transition">Solicitar
+            Consulta</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="equipo" class="py-24 bg-alfa-base">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <span class="text-alfa-coral font-bold tracking-widest uppercase text-xs">Humanos detrás del código</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-alfa-dark mt-2">
+          Mentes Maestras
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <!-- Member 1: Facundo -->
+        <div class="reveal flex items-center gap-6 bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition group">
+          <img src="https://ui-avatars.com/api/?name=Facundo+Rodriguez&background=1E293B&color=fff&size=128"
+            alt="Facundo Rodriguez"
+            class="w-24 h-24 rounded-full shadow-md group-hover:scale-110 transition duration-300" />
+          <div>
+            <h4 class="text-xl font-bold text-alfa-dark">
+              Facundo Rodriguez
+            </h4>
+            <p class="text-alfa-coral font-medium text-sm mb-2">
+              Co-Founder & Full Stack Dev
+            </p>
+            <p class="text-slate-500 text-sm">
+              Estudiante de Ingeniería en Sistemas. Me encargo de que la
+              lógica detrás de tu web sea robusta, segura y escalable.
+            </p>
+            <div class="mt-3 flex gap-3 text-slate-400 hidden">
+              <!-- <a href="#" class="hover:text-alfa-dark transition"><i class="fab fa-linkedin"></i></a>
+              <a href="#" class="hover:text-alfa-dark transition"><i class="fab fa-github"></i></a> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 2: Alma -->
+        <div
+          class="reveal delay-100 flex items-center gap-6 bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition group">
+          <img src="https://ui-avatars.com/api/?name=Alma+Ponce&background=FF6B6B&color=fff&size=128" alt="Alma Ponce"
+            class="w-24 h-24 rounded-full shadow-md group-hover:scale-110 transition duration-300" />
+          <div>
+            <h4 class="text-xl font-bold text-alfa-dark">Alma Ponce</h4>
+            <p class="text-alfa-coral font-medium text-sm mb-2">
+              Co-Founder & Frontend Specialist
+            </p>
+            <p class="text-slate-500 text-sm">
+              Estudiante de Ingeniería en Sistemas. Traduzco líneas de código
+              en experiencias visuales intuitivas y modernas.
+            </p>
+            <div class="mt-3 flex gap-3 text-slate-400 hidden">
+              <!-- <a href="#" class="hover:text-alfa-dark transition"><i class="fab fa-linkedin"></i></a>
+              <a href="#" class="hover:text-alfa-dark transition"><i class="fab fa-github"></i></a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodology & Stats -->
+  <section id="metodologia" class="py-24 bg-white relative overflow-hidden">
+    <!-- Background Blob -->
+    <div
+      class="absolute -right-20 top-20 w-96 h-96 bg-alfa-coral opacity-5 blur-[100px] rounded-full pointer-events-none">
+    </div>
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="reveal">
+          <div class="inline-block px-3 py-1 rounded-full bg-alfa-base border border-slate-200 mb-6">
+            <span class="text-xs font-bold text-alfa-coral uppercase tracking-wide">Resultados Probados</span>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-alfa-dark mb-6">
+            Datos, no opiniones.
+          </h2>
+          <p class="text-slate-600 mb-8 leading-relaxed">
+            No nos basamos en corazonadas. Utilizamos datos reales para iterar
+            y mejorar cada producto que lanzamos.
+          </p>
+
+          <!-- Interactive Numbers -->
+          <div class="grid grid-cols-2 gap-6 mb-8">
+            <div
+              class="p-6 bg-alfa-base rounded-2xl transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-white border border-transparent hover:border-slate-100 group cursor-default">
+              <span
+                class="block text-4xl font-extrabold text-alfa-dark counter mb-1 group-hover:text-alfa-coral transition-colors"
+                data-target="2">0</span>
+              <span class="text-xs text-slate-500 uppercase font-bold tracking-wider">Proyectos Entregados</span>
+            </div>
+            <div
+              class="p-6 bg-alfa-base rounded-2xl transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-white border border-transparent hover:border-slate-100 group cursor-default">
+              <span
+                class="block text-4xl font-extrabold text-alfa-dark counter mb-1 group-hover:text-alfa-coral transition-colors"
+                data-target="100">0</span>
+              <span class="text-xs text-slate-500 uppercase font-bold tracking-wider">% Dedicación</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chart -->
+        <div id="tiltCard"
+          class="reveal delay-200 bg-white p-8 rounded-3xl shadow-2xl border border-slate-100 transition-transform duration-100 ease-out transform"
+          style="perspective: 1000px; transform-style: preserve-3d;">
+          <h3 class="font-bold text-alfa-dark mb-6 text-center">
+            Evolución de Tu Marca
+          </h3>
+          <div class="chart-container">
+            <canvas id="roiChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-24 bg-alfa-dark text-white">
+    <div class="max-w-screen-2xl mx-auto px-4 text-center mb-16 reveal">
+      <span class="text-alfa-coral font-bold text-sm uppercase tracking-widest mb-2 block">Lo que dicen nuestros
+        clientes</span>
+      <h2 class="text-3xl font-bold">Palabras de Nuestros Clientes</h2>
+    </div>
+    <div class="max-w-3xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div
+        class="reveal bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl relative group hover:shadow-2xl transition">
+        <div class="flex items-start gap-1 mb-4">
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+        </div>
+        <p class="text-slate-200 italic mb-6 leading-relaxed">
+          "La web que hicieron para Mila Crush cambió completamente nuestro negocio. Pasamos de tener una presencia muy
+          básica a tener un sitio profesional que realmente vende. Muy recomendados."
+        </p>
+        <div class="flex items-center gap-4">
+          <img src="img/logos_1. Rondo Rojo.png" alt="Mila Crush Logo"
+            class="w-12 h-12 rounded-full object-cover object-center shadow-sm border border-slate-100">
+          <div class="text-left">
+            <div class="font-bold">Mila Crush</div>
+            <div class="text-xs text-slate-400">FastFood Emprendimiento</div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="reveal delay-100 bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl relative group hover:shadow-2xl transition">
+        <div class="flex items-start gap-1 mb-4">
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+          <i class="fas fa-star text-yellow-400"></i>
+        </div>
+        <p class="text-slate-200 italic mb-6 leading-relaxed">
+          "Desarrollaron nuestra plataforma desde cero con tecnología moderna. CV Argentina es completamente funcional y
+          escalable. Alfa Digital demuestra ser expertos en desarrollo full stack."
+        </p>
+        <div class="flex items-center gap-4">
+          <img src="img/logo.png" alt="CV Argentina Logo"
+            class="w-12 h-12 rounded-full object-cover object-center shadow-sm border border-slate-100">
+          <div class="text-left">
+            <div class="font-bold">CV Argentina</div>
+            <div class="text-xs text-slate-400">Plataforma Profesional</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-alfa-dark text-center mb-4 reveal">
+        Preguntas Frecuentes
+      </h2>
+      <p class="text-center text-slate-600 mb-12 reveal delay-100">
+        Resolvemos tus dudas sobre el proceso, precios y tecnología.
+      </p>
+
+      <div class="space-y-4">
+        <!-- Item 1 -->
+        <div
+          class="reveal accordion-item border-2 border-slate-200 rounded-xl overflow-hidden hover:border-alfa-coral transition">
+          <button class="w-full flex justify-between items-center p-6 text-left bg-white hover:bg-slate-50 transition"
+            onclick="toggleAccordion(this)">
+            <span class="font-bold text-alfa-dark text-lg">¿Cuánto tiempo tarda un proyecto web?</span>
+            <i class="fas fa-chevron-down text-slate-400 accordion-icon transition"></i>
+          </button>
+          <div class="accordion-content bg-slate-50 px-6 text-slate-600 text-sm">
+            <p class="pb-6">
+              <strong>Landing Pages:</strong> 5-7 días de desarrollo
+            </p>
+            <p class="pb-6">
+              <strong>Sitios Corporativos:</strong> 3-4 semanas
+            </p>
+            <p class="pb-6">
+              <strong>E-Commerce / SAAS:</strong> 6-12 semanas (según complejidad)
+            </p>
+            <p class="pb-6">
+              Todo depende de la complejidad del proyecto. En la consulta inicial definimos un timeline claro.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div
+          class="reveal delay-100 accordion-item border-2 border-slate-200 rounded-xl overflow-hidden hover:border-alfa-coral transition">
+          <button class="w-full flex justify-between items-center p-6 text-left bg-white hover:bg-slate-50 transition"
+            onclick="toggleAccordion(this)">
+            <span class="font-bold text-alfa-dark text-lg">¿Necesito tener el contenido listo?</span>
+            <i class="fas fa-chevron-down text-slate-400 accordion-icon transition"></i>
+          </button>
+          <div class="accordion-content bg-slate-50 px-6 text-slate-600 text-sm">
+            <p class="pb-6">
+              No es obligatorio. Podemos ayudarte con:
+            </p>
+            <ul class="list-disc list-inside space-y-2 pb-6">
+              <li>Estructura de contenido</li>
+              <li>Copywriting profesional</li>
+              <li>Imágenes y recursos visuales</li>
+              <li>Optimización SEO</li>
+            </ul>
+            <p>Si prefieres, también usamos contenido simulado (placeholder) mientras preparas tus textos.</p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div
+          class="reveal delay-200 accordion-item border-2 border-slate-200 rounded-xl overflow-hidden hover:border-alfa-coral transition">
+          <button class="w-full flex justify-between items-center p-6 text-left bg-white hover:bg-slate-50 transition"
+            onclick="toggleAccordion(this)">
+            <span class="font-bold text-alfa-dark text-lg">¿Ofrecen soporte después del lanzamiento?</span>
+            <i class="fas fa-chevron-down text-slate-400 accordion-icon transition"></i>
+          </button>
+          <div class="accordion-content bg-slate-50 px-6 text-slate-600 text-sm">
+            <p class="pb-6">
+              <strong>Plan Ágil:</strong> Soporte básico por 30 días
+            </p>
+            <p class="pb-6">
+              <strong>Plan Integral:</strong> Mantenimiento gratuito por 30 días + hosting incluido
+            </p>
+            <p class="pb-6">
+              <strong>Plan Enterprise:</strong> Soporte 24/7 premium + actualizaciones incluidas
+            </p>
+            <p>Después, contratación de soporte mensual disponible con precios competitivos.</p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div
+          class="reveal delay-300 accordion-item border-2 border-slate-200 rounded-xl overflow-hidden hover:border-alfa-coral transition">
+          <button class="w-full flex justify-between items-center p-6 text-left bg-white hover:bg-slate-50 transition"
+            onclick="toggleAccordion(this)">
+            <span class="font-bold text-alfa-dark text-lg">¿Qué pasa si cambian de idea después de firmar?</span>
+            <i class="fas fa-chevron-down text-slate-400 accordion-icon transition"></i>
+          </button>
+          <div class="accordion-content bg-slate-50 px-6 text-slate-600 text-sm">
+            <p class="pb-6">
+              Somos flexible. Ofrecemos cambios y ajustes durante el desarrollo.
+            </p>
+            <p class="pb-6">
+              <strong>Proceso:</strong> Consulta inicial → Propuesta → Contrato claro → Hitos definidos
+            </p>
+            <p class="pb-6">
+              Si requieren cambios mayores fuera del alcance, se detallan en una orden de cambio con costo adicional.
+            </p>
+            <p>Transparencia total: nunca sorpresas.</p>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div
+          class="reveal delay-100 accordion-item border-2 border-slate-200 rounded-xl overflow-hidden hover:border-alfa-coral transition">
+          <button class="w-full flex justify-between items-center p-6 text-left bg-white hover:bg-slate-50 transition"
+            onclick="toggleAccordion(this)">
+            <span class="font-bold text-alfa-dark text-lg">¿Ofrecen facilidades de pago?</span>
+            <i class="fas fa-chevron-down text-slate-400 accordion-icon transition"></i>
+          </button>
+          <div class="accordion-content bg-slate-50 px-6 text-slate-600 text-sm">
+            <p class="pb-6">
+              Sí. Nuestro esquema estándar es:
+            </p>
+            <ul class="list-disc list-inside space-y-2 pb-6">
+              <li>50% al inicio (reserva del proyecto)</li>
+              <li>50% contra entrega final</li>
+            </ul>
+            <p class="pb-6">
+              También aceptamos: transferencia, tarjeta de crédito y algunas criptomonedas.
+            </p>
+            <p>Para empresas grandes: podemos analizar planes de financiación.</p>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div
+          class="reveal delay-200 accordion-item border-2 border-slate-200 rounded-xl overflow-hidden hover:border-alfa-coral transition">
+          <button class="w-full flex justify-between items-center p-6 text-left bg-white hover:bg-slate-50 transition"
+            onclick="toggleAccordion(this)">
+            <span class="font-bold text-alfa-dark text-lg">¿Tendremos acceso a los archivos y código?</span>
+            <i class="fas fa-chevron-down text-slate-400 accordion-icon transition"></i>
+          </button>
+          <div class="accordion-content bg-slate-50 px-6 text-slate-600 text-sm">
+            <p class="pb-6">
+              <strong>100% sí.</strong> El código y los archivos son suyos.
+            </p>
+            <p class="pb-6">
+              Entregaremos:
+            </p>
+            <ul class="list-disc list-inside space-y-2 pb-6">
+              <li>Código fuente completo</li>
+              <li>Acceso a todas las cuentas (hosting, dominio, etc.)</li>
+              <li>Documentación técnica</li>
+              <li>Backups regulares</li>
+            </ul>
+            <p>No hay vendor lock-in. Son sus activos digitales.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="py-24 bg-white">
+    <div class="max-w-screen-2xl mx-auto px-4">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold text-alfa-dark mb-2">
+          Por Qué Elegirnos
+        </h2>
+        <p class="text-slate-600 max-w-2xl mx-auto text-lg">
+          No somos los más grandes, pero somos genuinos. Estos son nuestros valores.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div
+          class="reveal group p-6 bg-slate-50 rounded-2xl hover:bg-alfa-dark hover:text-white transition text-center cursor-pointer border border-transparent hover:border-alfa-coral">
+          <div class="text-4xl mb-3">💪</div>
+          <h4 class="font-bold text-sm">Dedicación Total</h4>
+          <p class="text-xs text-slate-600 group-hover:text-slate-300 mt-1">Tu proyecto es nuestra prioridad</p>
+        </div>
+        <div
+          class="reveal delay-100 group p-6 bg-slate-50 rounded-2xl hover:bg-alfa-dark hover:text-white transition text-center cursor-pointer border border-transparent hover:border-alfa-coral">
+          <div class="text-4xl mb-3">🎯</div>
+          <h4 class="font-bold text-sm">Resultados Reales</h4>
+          <p class="text-xs text-slate-600 group-hover:text-slate-300 mt-1">Medimos por ROI, no por likes</p>
+        </div>
+        <div
+          class="reveal delay-200 group p-6 bg-slate-50 rounded-2xl hover:bg-alfa-dark hover:text-white transition text-center cursor-pointer border border-transparent hover:border-alfa-coral">
+          <div class="text-4xl mb-3">🤝</div>
+          <h4 class="font-bold text-sm">Transparencia</h4>
+          <p class="text-xs text-slate-600 group-hover:text-slate-300 mt-1">Sin sorpresas, sin letra chica</p>
+        </div>
+        <div
+          class="reveal delay-300 group p-6 bg-slate-50 rounded-2xl hover:bg-alfa-dark hover:text-white transition text-center cursor-pointer border border-transparent hover:border-alfa-coral">
+          <div class="text-4xl mb-3">⚡</div>
+          <h4 class="font-bold text-sm">Velocidad</h4>
+          <p class="text-xs text-slate-600 group-hover:text-slate-300 mt-1">Entregamos rápido, sin comprometer</p>
+        </div>
+        <div
+          class="reveal delay-100 group p-6 bg-slate-50 rounded-2xl hover:bg-alfa-dark hover:text-white transition text-center cursor-pointer border border-transparent hover:border-alfa-coral">
+          <div class="text-4xl mb-3">📱</div>
+          <h4 class="font-bold text-sm">Accesibilidad</h4>
+          <p class="text-xs text-slate-600 group-hover:text-slate-300 mt-1">Precios justos para emprendimientos</p>
+        </div>
+        <div
+          class="reveal delay-200 group p-6 bg-slate-50 rounded-2xl hover:bg-alfa-dark hover:text-white transition text-center cursor-pointer border border-transparent hover:border-alfa-coral">
+          <div class="text-4xl mb-3">🔄</div>
+          <h4 class="font-bold text-sm">Flexibilidad</h4>
+          <p class="text-xs text-slate-600 group-hover:text-slate-300 mt-1">Nos adaptamos a tus necesidades</p>
+        </div>
+        <div
+          class="reveal delay-300 group p-6 bg-slate-50 rounded-2xl hover:bg-alfa-dark hover:text-white transition text-center cursor-pointer border border-transparent hover:border-alfa-coral">
+          <div class="text-4xl mb-3">🎓</div>
+          <h4 class="font-bold text-sm">Aprendizaje</h4>
+          <p class="text-xs text-slate-600 group-hover:text-slate-300 mt-1">Siempre creciendo y mejorando</p>
+        </div>
+        <div
+          class="reveal delay-100 group p-6 bg-slate-50 rounded-2xl hover:bg-alfa-dark hover:text-white transition text-center cursor-pointer border border-transparent hover:border-alfa-coral">
+          <div class="text-4xl mb-3">❤️</div>
+          <h4 class="font-bold text-sm">Pasión</h4>
+          <p class="text-xs text-slate-600 group-hover:text-slate-300 mt-1">Nos encanta lo que hacemos</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contacto" class="py-24 bg-alfa-dark text-white relative overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-80 h-80 bg-alfa-coral rounded-full opacity-10 blur-3xl"></div>
+    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500 rounded-full opacity-10 blur-3xl"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-16 reveal">
+        <span class="text-alfa-coral font-bold text-sm uppercase tracking-widest mb-2 block">Nos encantaría
+          conocerte</span>
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">
+          Hablemos sobre tu proyecto
+        </h2>
+        <p class="text-slate-300 text-lg max-w-2xl mx-auto">
+          Cuéntanos tu idea, tus desafíos y tus metas. Te responderemos en menos de 24 horas.
+        </p>
+      </div>
+
+      <div
+        class="reveal delay-200 bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-700">
+        <form id="contactForm" onsubmit="handleContact(event)" class="space-y-5">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_subject" value="Nueva consulta web - Alfa Digital">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <input type="text" name="name" placeholder="Tu Nombre" required
+              class="w-full px-5 py-3.5 rounded-xl bg-slate-700/50 border border-slate-600 text-white placeholder-slate-400 focus:outline-none focus:border-alfa-coral focus:bg-slate-700 transition backdrop-blur-sm" />
+            <input type="email" name="email" placeholder="tu@email.com" required
+              class="w-full px-5 py-3.5 rounded-xl bg-slate-700/50 border border-slate-600 text-white placeholder-slate-400 focus:outline-none focus:border-alfa-coral focus:bg-slate-700 transition backdrop-blur-sm" />
+          </div>
+          <input type="text" name="company" placeholder="Nombre de tu empresa"
+            class="w-full px-5 py-3.5 rounded-xl bg-slate-700/50 border border-slate-600 text-white placeholder-slate-400 focus:outline-none focus:border-alfa-coral focus:bg-slate-700 transition backdrop-blur-sm" />
+          <select name="project_type"
+            class="w-full px-5 py-3.5 rounded-xl bg-slate-700/50 border border-slate-600 text-white focus:outline-none focus:border-alfa-coral focus:bg-slate-700 transition backdrop-blur-sm">
+            <option class="bg-slate-800 text-slate-300">
+              ¿Qué tipo de proyecto tienes en mente?
+            </option>
+            <option class="bg-slate-800 text-white">Landing Page</option>
+            <option class="bg-slate-800 text-white">Sitio Corporativo</option>
+            <option class="bg-slate-800 text-white">E-Commerce</option>
+            <option class="bg-slate-800 text-white">SAAS / Aplicación Web</option>
+            <option class="bg-slate-800 text-white">Rebranding</option>
+            <option class="bg-slate-800 text-white">Otro</option>
+          </select>
+          <textarea name="message" rows="5" placeholder="Cuéntanos sobre tu proyecto, tus metas y qué te diferencia..."
+            class="w-full px-5 py-3.5 rounded-xl bg-slate-700/50 border border-slate-600 text-white placeholder-slate-400 focus:outline-none focus:border-alfa-coral focus:bg-slate-700 transition backdrop-blur-sm resize-none"></textarea>
+
+          <div class="flex items-center gap-3">
+            <input type="checkbox" id="newsletter" name="newsletter" value="yes" checked
+              class="w-4 h-4 accent-alfa-coral cursor-pointer" />
+            <label for="newsletter" class="text-sm text-slate-300 cursor-pointer">
+              Deseo recibir tips, case studies y noticias sobre desarrollo web
+            </label>
+          </div>
+
+          <button type="submit"
+            class="w-full bg-gradient-to-r from-alfa-coral to-[#ff5252] text-white font-bold py-4 rounded-xl hover:shadow-2xl hover:shadow-red-500/50 transition transform hover:-translate-y-1 flex items-center justify-center gap-2 group text-lg">
+            <span>Enviar Consulta</span> <i class="fas fa-paper-plane group-hover:translate-x-1 transition"></i>
+          </button>
+        </form>
+
+        <!-- Success Message -->
+        <div id="success-msg"
+          class="hidden absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900 flex flex-col items-center justify-center p-8 text-center rounded-3xl backdrop-blur-sm z-20">
+          <div
+            class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mb-6 text-4xl shadow-lg animate-bounce">
+            ✓
+          </div>
+          <h3 class="text-3xl font-bold text-white mb-2">
+            ¡Mensaje Enviado!
+          </h3>
+          <p class="text-slate-300 mb-6 text-lg">
+            Gracias por confiar en Alfa Digital. Analizaremos tu solicitud y nos pondremos en contacto en menos de 24
+            horas.
+          </p>
+          <button onclick="resetForm()" class="text-alfa-coral underline font-bold hover:text-white transition">
+            Enviar otro mensaje
+          </button>
+        </div>
+      </div>
+
+      <!-- Contact Info Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 reveal delay-400">
+        <div
+          class="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 text-center hover:border-alfa-coral transition">
+          <div class="text-4xl mb-4">💬</div>
+          <h4 class="font-bold mb-2">Chat Directo</h4>
+          <p class="text-slate-400 text-sm">Disponible por WhatsApp<br />+54 (XX) XXXX-XXXX</p>
+        </div>
+        <div
+          class="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 text-center hover:border-alfa-coral transition">
+          <div class="text-4xl mb-4">📧</div>
+          <h4 class="font-bold mb-2">Email</h4>
+          <p class="text-slate-400 text-sm">Respuesta en 24hs<br />hola@alfadigital.com</p>
+        </div>
+        <div
+          class="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 text-center hover:border-alfa-coral transition">
+          <div class="text-4xl mb-4">📅</div>
+          <h4 class="font-bold mb-2">Agendar Llamada</h4>
+          <p class="text-slate-400 text-sm">Consulta sin costo<br />15 minutos contigo</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <!-- Footer -->
+  <footer class="bg-slate-50 text-slate-800 py-16 border-t border-slate-200">
+    <div class="max-w-screen-2xl mx-auto px-4">
+      <!-- Main Footer Content -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <!-- Brand -->
+        <div class="flex flex-col items-start">
+          <div class="flex items-center gap-3 mb-6">
+            <img src="img/logo Alfa Digital sin fondo.png" alt="Alfa Digital Logo"
+              class="logo-icon mb-0 hover:rotate-6 hover:scale-110 transition duration-500 ease-in-out"
+              style="width: 120px; height: auto; object-fit: contain;" onerror="this.style.display='none'" />
+          </div>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            Transformamos ideas en máquinas de ventas digitales. Diseño, desarrollo y estrategia en uno.
+          </p>
+          <div class="flex gap-4 mt-6">
+            <a href="https://instagram.com/alfadigital.ar" target="_blank"
+              class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-white hover:bg-alfa-coral transition">
+              <i class="fab fa-instagram text-lg"></i>
+            </a>
+            <!--
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-white hover:bg-[#1DA1F2] transition">
+              <i class="fab fa-twitter text-lg"></i>
+            </a>
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-white hover:bg-[#0A66C2] transition">
+              <i class="fab fa-linkedin text-lg"></i>
+            </a>
+            -->
+            <a href="https://wa.me/5492614994711" target="_blank"
+              class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-white hover:bg-[#25D366] transition">
+              <i class="fab fa-whatsapp text-lg"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Servicios -->
+        <div>
+          <h4 class="font-bold text-alfa-dark mb-6 text-lg">Servicios</h4>
+          <ul class="space-y-3 text-slate-600 text-sm">
+            <li><a href="#servicios" class="hover:text-alfa-coral transition">Diseño Web & UX/UI</a></li>
+            <li><a href="#servicios" class="hover:text-alfa-coral transition">Full Stack Dev</a></li>
+            <li><a href="#servicios" class="hover:text-alfa-coral transition">Branding Digital</a></li>
+            <li><a href="#planes" class="hover:text-alfa-coral transition">E-Commerce</a></li>
+            <li><a href="#planes" class="hover:text-alfa-coral transition">SAAS & Apps</a></li>
+          </ul>
+        </div>
+
+        <!-- Empresa -->
+        <div>
+          <h4 class="font-bold text-alfa-dark mb-6 text-lg">Empresa</h4>
+          <ul class="space-y-3 text-slate-600 text-sm">
+            <li><a href="#equipo" class="hover:text-alfa-coral transition">Nuestro Equipo</a></li>
+            <li><a href="#casos-exito" class="hover:text-alfa-coral transition">Casos de Éxito</a></li>
+            <li><a href="#metodologia" class="hover:text-alfa-coral transition">Metodología</a></li>
+            <li><a href="#" class="hover:text-alfa-coral transition">Blog</a></li>
+            <li><a href="#contacto" class="hover:text-alfa-coral transition">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal & Info -->
+        <div>
+          <h4 class="font-bold text-alfa-dark mb-6 text-lg">Legal</h4>
+          <ul class="space-y-3 text-slate-600 text-sm">
+            <li><a href="#" onclick="openLegal('terms'); return false;"
+                class="hover:text-alfa-coral transition">Términos de Servicio</a></li>
+            <li><a href="#" onclick="openLegal('privacy'); return false;"
+                class="hover:text-alfa-coral transition">Política de Privacidad</a></li>
+            <li><a href="#" onclick="openLegal('cookies'); return false;"
+                class="hover:text-alfa-coral transition">Cookies</a></li>
+            <li><a href="#" onclick="openLegal('report'); return false;"
+                class="hover:text-alfa-coral transition">Reportar un Problema</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="h-px bg-slate-200 mb-8"></div>
+
+      <!-- Bottom Footer -->
+      <!-- Bottom Footer -->
+      <div class="flex justify-center items-center">
+        <p class="text-slate-500 text-sm text-center">
+          &copy; 2025 Alfa Digital. Todos los derechos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <div class="fixed bottom-6 right-6 z-50 group">
+    <div
+      class="absolute bottom-full right-0 mb-2 w-max bg-white text-slate-800 text-xs font-bold py-1 px-3 rounded shadow-lg opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none">
+      ¿Necesitas ayuda?
+    </div>
+    <a href="https://wa.me/5492614994711" target="_blank"
+      class="bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:bg-[#20bd5a] transition hover:scale-110 animate-bounce cursor-pointer">
+      <i class="fab fa-whatsapp text-4xl"></i>
+    </a>
+  </div>
+
+  <!-- Legal Modal -->
+  <div id="legalModal" class="fixed inset-0 z-[60] hidden">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity opacity-0" id="legalBackdrop">
+    </div>
+
+    <!-- Modal Content -->
+    <div
+      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl px-4 transition-all duration-300 scale-95 opacity-0"
+      id="legalContent">
+      <div class="bg-white rounded-3xl shadow-2xl overflow-hidden max-h-[80vh] flex flex-col">
+        <!-- Header -->
+        <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+          <h3 class="text-2xl font-bold text-alfa-dark" id="legalTitle">Legal</h3>
+          <button onclick="closeLegal()"
+            class="w-8 h-8 rounded-full bg-white text-slate-400 hover:text-alfa-coral hover:bg-red-50 flex items-center justify-center transition shadow-sm">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <!-- Body -->
+        <div class="p-8 overflow-y-auto custom-scrollbar">
+          <div class="prose prose-slate max-w-none text-slate-600 space-y-4" id="legalBody">
+            <!-- Content injected via JS -->
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="p-6 border-t border-slate-100 bg-slate-50 flex justify-end">
+          <button onclick="closeLegal()"
+            class="px-6 py-2 bg-alfa-dark text-white font-bold rounded-xl hover:bg-slate-800 transition shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+            Entendido
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

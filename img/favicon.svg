@@ -1,0 +1,16 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo con bordes redondeados (matches logic: w-20 h-20 rounded-2xl in HTML ~ approx 20-25% radius) -->
+  <rect width="60" height="60" rx="16" fill="#1E293B"/>
+
+  <!-- Left Leg (White) -->
+  <path d="M25 12 L5 54.5 L22.5 54.5 L30 26.875 Z" fill="white"/>
+
+  <!-- Right Leg (White) -->
+  <path d="M35 12 L55 54.5 L37.5 54.5 L30 26.875 Z" fill="white"/>
+
+  <!-- Accent Triangle (Coral) -->
+  <path d="M30 33.25 L40 43.875 L20 43.875 Z" fill="#FF6B6B"/>
+
+  <!-- Dot (Coral) -->
+  <circle cx="30" cy="7" r="3" fill="#FF6B6B"/>
+</svg>
