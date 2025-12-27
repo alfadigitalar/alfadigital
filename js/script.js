@@ -97,6 +97,7 @@ function resetForm() {
 // --- Inicialización al Cargar el DOM ---
 document.addEventListener("DOMContentLoaded", () => {
   // Configuración del Gráfico de ROI
+  const e = document.getElementById("roiChart").getContext("2d");
   new Chart(e, {
     type: "line",
     data: {
