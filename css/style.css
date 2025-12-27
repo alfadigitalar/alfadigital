@@ -110,12 +110,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #ff6b6b;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff6b6b;
+  background: #ff5252;
 }
 
 /* --- Animaciones de la Sección Equipo --- */
@@ -151,5 +151,21 @@ body {
   }
   100% {
     box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+  }
+}
+
+/* --- Animación de Texto (Shimmer) --- */
+.text-shimmer {
+  background: linear-gradient(to right, #1e293b 0%, #ff6b6b 50%, #1e293b 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% center;
   }
 }
