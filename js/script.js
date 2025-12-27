@@ -1,6 +1,8 @@
+// --- Menú Móvil ---
 const btn = document.getElementById("mobile-menu-btn"),
   menu = document.getElementById("mobile-menu");
 btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+// --- Función de Aparición al Scroll (Reveal) ---
 function reveal() {
   var e = document.querySelectorAll(".reveal");
   for (var t = 0; t < e.length; t++) {
@@ -9,6 +11,7 @@ function reveal() {
   }
 }
 window.addEventListener("scroll", reveal), reveal();
+// --- Lógica del Acordeón ---
 function toggleAccordion(e) {
   const t = e.parentElement,
     n = t.classList.contains("is-open");
@@ -18,6 +21,7 @@ function toggleAccordion(e) {
     n || t.classList.add("is-open");
 }
 let counterStarted = !1;
+// --- Animación de Contadores Estadísticos ---
 const statsSection = document.getElementById("metodologia");
 function animateValue(e, t, n, a) {
   let o = null;
@@ -38,6 +42,7 @@ window.addEventListener("scroll", () => {
       animateValue(e, 0, t, 2e3);
     }));
 });
+// --- Filtrado de Proyectos ---
 function filterProjects(e) {
   const t = document.querySelectorAll(".project-card"),
     n = document.querySelectorAll(".filter-btn");
@@ -58,6 +63,7 @@ function filterProjects(e) {
         : (t.style.display = "none");
     });
 }
+// --- Manejo del Formulario de Contacto ---
 function handleContact(e) {
   e.preventDefault();
   const t = e.target,
@@ -88,8 +94,9 @@ function handleContact(e) {
 function resetForm() {
   document.getElementById("success-msg").classList.add("hidden");
 }
+// --- Inicialización al Cargar el DOM ---
 document.addEventListener("DOMContentLoaded", () => {
-  const e = document.getElementById("roiChart").getContext("2d");
+  // Configuración del Gráfico de ROI
   new Chart(e, {
     type: "line",
     data: {
@@ -142,6 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     },
   });
+  // --- Modal Legal ---
   const t = document.getElementById("legalModal"),
     n = document.getElementById("legalBackdrop"),
     a = document.getElementById("legalContent"),
@@ -190,6 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
     t.addEventListener("click", (e) => {
       (e.target !== n && "legalModal" !== e.target.id) || closeLegal();
     });
+  // --- Animación del Canvas (Hero) ---
   const c = document.getElementById("heroCanvas"),
     l = c.getContext("2d"),
     s = document.getElementById("hero");
@@ -207,6 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function p() {
     (d = c.width = s.offsetWidth), (u = c.height = s.offsetHeight);
   }
+  // Clase Partícula
   class f {
     constructor() {
       (this.x = Math.random() * d),
@@ -300,6 +310,7 @@ document.addEventListener("DOMContentLoaded", () => {
     p(),
     h(),
     b();
+  // --- Efecto Tilt 3D para tarjeta ---
   const y = document.getElementById("tiltCard");
   y &&
     (y.addEventListener("mousemove", (e) => {

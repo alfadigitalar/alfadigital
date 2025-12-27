@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- SEO & Metadatos -->
+  <!-- SEO y Metadatos -->
   <meta name="description"
     content="Alfa Digital: Agencia de diseño y desarrollo web en Argentina. Transformamos ideas en máquinas de ventas con webs rápidas, modernas y efectivas.">
   <meta name="keywords"
@@ -29,7 +29,7 @@
     content="Creamos sitios web que venden. Diseño inteligente, desarrollo limpio y estrategia digital.">
   <meta property="og:image" content="img/logo Alfa Digital sin fondo.png">
 
-  <!-- Twitter -->
+  <!-- Twitter (Tarjetas) -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://alfa-digital.vercel.app/">
   <meta property="twitter:title" content="Alfa Digital | Agencia de Transformación Digital Premium">
@@ -78,7 +78,7 @@
 </head>
 
 <body class="antialiased selection:bg-alfa-coral selection:text-white">
-  <!-- Navigation -->
+  <!-- Navegación -->
   <nav class="fixed w-full z-50 nav-blur transition-all duration-300" id="navbar">
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
@@ -89,7 +89,7 @@
               class="text-alfa-coral">.</span></span>
         </div>
 
-        <!-- Desktop Menu -->
+        <!-- Menú de Escritorio -->
         <div class="hidden md:flex space-x-8 items-center">
           <a href="#servicios"
             class="text-sm font-semibold text-slate-600 hover:text-alfa-coral transition relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-alfa-coral after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">Servicios</a>
@@ -105,7 +105,7 @@
           </a>
         </div>
 
-        <!-- Mobile Menu Button -->
+        <!-- Botón de Menú Móvil -->
         <div class="md:hidden flex items-center">
           <button id="mobile-menu-btn" class="text-alfa-dark text-2xl focus:outline-none">
             <i class="fas fa-bars"></i>
@@ -113,7 +113,7 @@
         </div>
       </div>
     </div>
-    <!-- Mobile Menu Panel -->
+    <!-- Panel de Menú Móvil -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-2xl">
       <div class="px-4 pt-2 pb-6 space-y-2">
         <a href="#servicios"
@@ -130,18 +130,18 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Sección Hero (Principal) -->
   <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 flex flex-col items-center text-center overflow-hidden"
     id="hero">
-    <!-- Background Canvas -->
+    <!-- Lienzo de fondo (Canvas) -->
     <canvas id="heroCanvas" class="absolute inset-0 w-full h-full -z-0"></canvas>
 
-    <!-- Background Blobs (Optional - keeping them for depth behind canvas if needed, or removing if canvas is enough. Let's keep distinct blobs for color) -->
+    <!-- Blobs de fondo (Opcional - manteniéndolos para profundidad detrás del canvas si es necesario) -->
     <div
       class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-100 to-red-50 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob -z-10">
     </div>
 
-    <!-- Content Wrapper -->
+    <!-- Envoltorio de Contenido -->
     <div class="relative z-10 flex flex-col items-center max-w-screen-2xl mx-auto w-full">
       <div
         class="reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-slate-200 mb-8 shadow-sm">
@@ -150,7 +150,7 @@
       </div>
 
       <h1
-        class="reveal delay-100 text-5xl md:text-7xl font-extrabold text-alfa-dark mb-6 tracking-tight max-w-5xl leading-tight">
+        class="reveal delay-100 text-4xl sm:text-5xl md:text-7xl font-extrabold text-alfa-dark mb-6 tracking-tight max-w-5xl leading-tight">
         Tu marca merece una web
         <br class="hidden md:block" />
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B6B] via-[#FF8C8C] to-[#1E293B]">que
@@ -181,7 +181,7 @@
     </div>
   </section>
 
-  <!-- Infinite Marquee -->
+  <!-- Marquesina Infinita -->
   <div class="py-6 bg-alfa-dark overflow-hidden marquee-container relative z-10">
     <div class="flex animate-scroll whitespace-nowrap">
       <div class="flex items-center gap-12 mx-6 text-slate-400 font-bold text-xl uppercase tracking-widest">
@@ -208,7 +208,7 @@
         <span>E-Commerce</span>
         <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
       </div>
-      <!-- Duplicate for seamless loop -->
+      <!-- Duplicado para bucle continuo -->
       <div class="flex items-center gap-12 mx-6 text-slate-400 font-bold text-xl uppercase tracking-widest">
         <span>Estrategia</span>
         <i class="fas fa-circle text-[6px] text-alfa-coral"></i>
@@ -236,7 +236,7 @@
     </div>
   </div>
 
-  <!-- Services Section -->
+  <!-- Sección de Servicios -->
   <section id="servicios" class="py-24 bg-white relative overflow-hidden">
     <div
       class="absolute top-0 left-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10">
@@ -313,7 +313,7 @@
     </div>
   </section>
 
-  <!-- Projects Section (WITH DYNAMIC PREVIEW) -->
+  <!-- Sección de Proyectos (CON VISTA PREVIA DINÁMICA) -->
   <section id="proyectos" class="py-24 bg-alfa-dark text-white relative overflow-hidden">
     <div class="absolute top-0 right-0 w-96 h-96 bg-alfa-coral opacity-5 blur-[100px] rounded-full"></div>
 
@@ -345,14 +345,14 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
-        <!-- Project 1: AUTO PREVIEW -->
+        <!-- Proyecto 1: VISTA PREVIA AUTOMÁTICA -->
         <a href="http://mila-crush.vercel.app/" target="_blank" rel="noopener noreferrer"
           class="reveal project-card group relative rounded-2xl overflow-hidden bg-slate-800 w-full aspect-[16/10] cursor-pointer shadow-2xl hover:shadow-2xl hover:shadow-alfa-coral/50 transition"
           data-category="web">
           <img src="img/mila-crush-preview.png" alt="Vista previa de Mila Crush"
             class="absolute inset-0 w-full h-full object-cover object-top transition duration-700 group-hover:scale-110" />
 
-          <!-- Overlay -->
+          <!-- Superposición (Overlay) -->
           <div
             class="project-overlay absolute inset-0 bg-alfa-dark/95 opacity-0 transition duration-300 flex flex-col justify-center items-center text-center p-6 backdrop-blur-sm">
             <h3 class="text-2xl font-bold mb-2">Mila Crush 🍔</h3>
@@ -366,14 +366,14 @@
           </div>
         </a>
 
-        <!-- Project 2: CV Argentina -->
+        <!-- Proyecto 2: CV Argentina -->
         <a href="https://cvarg-ten.vercel.app/" target="_blank" rel="noopener noreferrer"
           class="reveal delay-100 project-card group relative rounded-2xl overflow-hidden bg-slate-800 w-full aspect-[16/10] cursor-pointer shadow-2xl hover:shadow-2xl hover:shadow-alfa-coral/50 transition"
           data-category="web">
           <img src="img/cv-argentina-preview.png" alt="Vista previa de CV Argentina"
             class="absolute inset-0 w-full h-full object-cover object-top transition duration-700 group-hover:scale-110" />
 
-          <!-- Overlay -->
+          <!-- Superposición (Overlay) -->
           <div
             class="project-overlay absolute inset-0 bg-alfa-dark/95 opacity-0 transition duration-300 flex flex-col justify-center items-center text-center p-6 backdrop-blur-sm">
             <h3 class="text-2xl font-bold mb-2">CV Argentina 💼</h3>
@@ -388,7 +388,7 @@
     </div>
   </section>
 
-  <!-- Plans / Pricing Section -->
+  <!-- Sección de Planes / Precios -->
   <section id="casos-exito" class="py-24 bg-gradient-to-b from-slate-50 to-white">
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 reveal">
@@ -401,7 +401,7 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <!-- Case 1 -->
+        <!-- Caso 1 -->
         <div
           class="reveal bg-white p-8 rounded-2xl border border-slate-200 hover:border-alfa-coral hover:shadow-xl transition group">
           <div class="flex items-center gap-4 mb-6">
@@ -428,7 +428,7 @@
           </div>
         </div>
 
-        <!-- Case 2 -->
+        <!-- Caso 2 -->
         <div
           class="reveal delay-100 bg-white p-8 rounded-2xl border border-slate-200 hover:border-alfa-coral hover:shadow-xl transition group">
           <div class="flex items-center gap-4 mb-6">
@@ -458,7 +458,7 @@
     </div>
   </section>
 
-  <!-- Plans / Pricing Section -->
+  <!-- Sección de Planes / Precios -->
   <section id="planes" class="py-24 bg-white">
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 reveal">
@@ -602,7 +602,7 @@
     </div>
   </section>
 
-  <!-- Team Section -->
+  <!-- Sección de Equipo -->
   <section id="equipo" class="py-24 bg-alfa-base">
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 reveal">
@@ -613,11 +613,11 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-        <!-- Member 1: Facundo -->
+        <!-- Miembro 1: Facundo -->
         <div class="reveal flex items-center gap-6 bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition group">
-          <img src="https://ui-avatars.com/api/?name=Facundo+Rodriguez&background=1E293B&color=fff&size=128"
-            alt="Facundo Rodriguez"
-            class="w-24 h-24 rounded-full shadow-md group-hover:scale-110 transition duration-300" />
+          <div class="w-24 h-24 rounded-full team-img-container team-pulse shadow-md flex-shrink-0">
+            <img src="img/facu.jpeg" alt="Facundo Rodriguez" class="w-full h-full object-cover" />
+          </div>
           <div>
             <h4 class="text-xl font-bold text-alfa-dark">
               Facundo Rodriguez
@@ -636,11 +636,12 @@
           </div>
         </div>
 
-        <!-- Member 2: Alma -->
+        <!-- Miembro 2: Alma -->
         <div
           class="reveal delay-100 flex items-center gap-6 bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition group">
-          <img src="https://ui-avatars.com/api/?name=Alma+Ponce&background=FF6B6B&color=fff&size=128" alt="Alma Ponce"
-            class="w-24 h-24 rounded-full shadow-md group-hover:scale-110 transition duration-300" />
+          <div class="w-24 h-24 rounded-full team-img-container team-pulse shadow-md flex-shrink-0">
+            <img src="img/alma.jpeg" alt="Alma Ponce" class="w-full h-full object-cover" />
+          </div>
           <div>
             <h4 class="text-xl font-bold text-alfa-dark">Alma Ponce</h4>
             <p class="text-alfa-coral font-medium text-sm mb-2">
@@ -660,9 +661,9 @@
     </div>
   </section>
 
-  <!-- Methodology & Stats -->
+  <!-- Metodología y Estadísticas -->
   <section id="metodologia" class="py-24 bg-white relative overflow-hidden">
-    <!-- Background Blob -->
+    <!-- Blob de fondo -->
     <div
       class="absolute -right-20 top-20 w-96 h-96 bg-alfa-coral opacity-5 blur-[100px] rounded-full pointer-events-none">
     </div>
@@ -680,26 +681,26 @@
             y mejorar cada producto que lanzamos.
           </p>
 
-          <!-- Interactive Numbers -->
+          <!-- Números Interactivos -->
           <div class="grid grid-cols-2 gap-6 mb-8">
             <div
               class="p-6 bg-alfa-base rounded-2xl transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-white border border-transparent hover:border-slate-100 group cursor-default">
               <span
-                class="block text-4xl font-extrabold text-alfa-dark counter mb-1 group-hover:text-alfa-coral transition-colors"
+                class="block text-3xl md:text-4xl font-extrabold text-alfa-dark counter mb-1 group-hover:text-alfa-coral transition-colors"
                 data-target="2">0</span>
               <span class="text-xs text-slate-500 uppercase font-bold tracking-wider">Proyectos Entregados</span>
             </div>
             <div
               class="p-6 bg-alfa-base rounded-2xl transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-white border border-transparent hover:border-slate-100 group cursor-default">
               <span
-                class="block text-4xl font-extrabold text-alfa-dark counter mb-1 group-hover:text-alfa-coral transition-colors"
+                class="block text-3xl md:text-4xl font-extrabold text-alfa-dark counter mb-1 group-hover:text-alfa-coral transition-colors"
                 data-target="100">0</span>
               <span class="text-xs text-slate-500 uppercase font-bold tracking-wider">% Dedicación</span>
             </div>
           </div>
         </div>
 
-        <!-- Chart -->
+        <!-- Gráfico -->
         <div id="tiltCard"
           class="reveal delay-200 bg-white p-8 rounded-3xl shadow-2xl border border-slate-100 transition-transform duration-100 ease-out transform"
           style="perspective: 1000px; transform-style: preserve-3d;">
@@ -714,7 +715,7 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
+  <!-- Testimonios -->
   <section class="py-24 bg-alfa-dark text-white">
     <div class="max-w-screen-2xl mx-auto px-4 text-center mb-16 reveal">
       <span class="text-alfa-coral font-bold text-sm uppercase tracking-widest mb-2 block">Lo que dicen nuestros
@@ -769,7 +770,7 @@
     </div>
   </section>
 
-  <!-- FAQ Section -->
+  <!-- Sección de Preguntas Frecuentes -->
   <section class="py-24 bg-slate-50">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
       <h2 class="text-3xl md:text-4xl font-bold text-alfa-dark text-center mb-4 reveal">
@@ -780,7 +781,7 @@
       </p>
 
       <div class="space-y-4">
-        <!-- Item 1 -->
+        <!-- Ítem 1 -->
         <div
           class="reveal accordion-item border-2 border-slate-200 rounded-xl overflow-hidden hover:border-alfa-coral transition">
           <button class="w-full flex justify-between items-center p-6 text-left bg-white hover:bg-slate-50 transition"
@@ -804,7 +805,7 @@
           </div>
         </div>
 
-        <!-- Item 2 -->
+        <!-- Ítem 2 -->
         <div
           class="reveal delay-100 accordion-item border-2 border-slate-200 rounded-xl overflow-hidden hover:border-alfa-coral transition">
           <button class="w-full flex justify-between items-center p-6 text-left bg-white hover:bg-slate-50 transition"
@@ -826,7 +827,7 @@
           </div>
         </div>
 
-        <!-- Item 3 -->
+        <!-- Ítem 3 -->
         <div
           class="reveal delay-200 accordion-item border-2 border-slate-200 rounded-xl overflow-hidden hover:border-alfa-coral transition">
           <button class="w-full flex justify-between items-center p-6 text-left bg-white hover:bg-slate-50 transition"
@@ -848,7 +849,7 @@
           </div>
         </div>
 
-        <!-- Item 4 -->
+        <!-- Ítem 4 -->
         <div
           class="reveal delay-300 accordion-item border-2 border-slate-200 rounded-xl overflow-hidden hover:border-alfa-coral transition">
           <button class="w-full flex justify-between items-center p-6 text-left bg-white hover:bg-slate-50 transition"
@@ -870,7 +871,7 @@
           </div>
         </div>
 
-        <!-- Item 5 -->
+        <!-- Ítem 5 -->
         <div
           class="reveal delay-100 accordion-item border-2 border-slate-200 rounded-xl overflow-hidden hover:border-alfa-coral transition">
           <button class="w-full flex justify-between items-center p-6 text-left bg-white hover:bg-slate-50 transition"
@@ -893,7 +894,7 @@
           </div>
         </div>
 
-        <!-- Item 6 -->
+        <!-- Ítem 6 -->
         <div
           class="reveal delay-200 accordion-item border-2 border-slate-200 rounded-xl overflow-hidden hover:border-alfa-coral transition">
           <button class="w-full flex justify-between items-center p-6 text-left bg-white hover:bg-slate-50 transition"
@@ -921,7 +922,7 @@
     </div>
   </section>
 
-  <!-- Values Section -->
+  <!-- Sección de Valores -->
   <section class="py-24 bg-white">
     <div class="max-w-screen-2xl mx-auto px-4">
       <div class="text-center mb-16 reveal">
@@ -1071,31 +1072,31 @@
           class="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 text-center hover:border-alfa-coral transition">
           <div class="text-4xl mb-4">💬</div>
           <h4 class="font-bold mb-2">Chat Directo</h4>
-          <p class="text-slate-400 text-sm">Disponible por WhatsApp<br />+54 (XX) XXXX-XXXX</p>
+          <p class="text-slate-400 text-sm">Disponible por WhatsApp<br />+54 9 261 499-4711</p>
         </div>
         <div
           class="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 text-center hover:border-alfa-coral transition">
           <div class="text-4xl mb-4">📧</div>
           <h4 class="font-bold mb-2">Email</h4>
-          <p class="text-slate-400 text-sm">Respuesta en 24hs<br />hola@alfadigital.com</p>
+          <p class="text-slate-400 text-sm">Respuesta en 24hs<br />alfa.digital.arg@gmail.com</p>
         </div>
         <div
           class="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 text-center hover:border-alfa-coral transition">
-          <div class="text-4xl mb-4">📅</div>
-          <h4 class="font-bold mb-2">Agendar Llamada</h4>
-          <p class="text-slate-400 text-sm">Consulta sin costo<br />15 minutos contigo</p>
+          <div class="text-4xl mb-4">💼</div>
+          <h4 class="font-bold mb-2">Solicitar Presupuesto</h4>
+          <p class="text-slate-400 text-sm">Cotización a medida<br />Sin cargo</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer (Pie de página) -->
   <!-- Footer -->
   <footer class="bg-slate-50 text-slate-800 py-16 border-t border-slate-200">
     <div class="max-w-screen-2xl mx-auto px-4">
-      <!-- Main Footer Content -->
+      <!-- Contenido Principal del Footer -->
       <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-        <!-- Brand -->
+        <!-- Marca -->
         <div class="flex flex-col items-start">
           <div class="flex items-center gap-3 mb-6">
             <img src="img/logo Alfa Digital sin fondo.png" alt="Alfa Digital Logo"
