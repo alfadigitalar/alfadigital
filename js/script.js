@@ -327,3 +327,18 @@ document.addEventListener("DOMContentLoaded", () => {
         "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
     }));
 });
+
+// --- Función de Scroll para Carrusel ---
+function scrollCarousel(direction) {
+  const container = document.getElementById("projects-carousel");
+  if (!container) return;
+
+  // Calculamos el ancho de desplazamiento basado en el primer card o un valor fijo
+  const card = container.querySelector(".project-card");
+  const scrollAmount = card ? card.offsetWidth + 24 : 400; // 24 es el gap aproximado
+
+  container.scrollBy({
+    left: scrollAmount * direction,
+    behavior: "smooth",
+  });
+}

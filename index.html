@@ -343,54 +343,94 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
-        <!-- Proyecto 1: VISTA PREVIA AUTOMÁTICA -->
-        <a href="http://mila-crush.vercel.app/" target="_blank" rel="noopener noreferrer"
-          class="reveal project-card group relative rounded-2xl overflow-hidden bg-slate-800 w-full aspect-[16/10] cursor-pointer shadow-2xl hover:shadow-2xl hover:shadow-alfa-coral/50 transition"
-          data-category="web">
-          <div
-            class="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full z-20 shadow-lg uppercase tracking-wider">
-            Finalizado
-          </div>
-          <img src="img/mila-crush-preview.png" alt="Vista previa de Mila Crush"
-            class="absolute inset-0 w-full h-full object-cover object-top transition duration-700 group-hover:scale-110" />
+      <!-- Carousel Container Wrapper -->
+      <div class="relative group/carousel">
+        <!-- Navigation Buttons -->
+        <button onclick="scrollCarousel(-1)"
+          class="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-md border border-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-alfa-coral hover:border-alfa-coral transition opacity-0 group-hover/carousel:opacity-100 disabled:opacity-0">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button onclick="scrollCarousel(1)"
+          class="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-md border border-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-alfa-coral hover:border-alfa-coral transition opacity-0 group-hover/carousel:opacity-100 disabled:opacity-0">
+          <i class="fas fa-chevron-right"></i>
+        </button>
 
-          <!-- Superposición (Overlay) -->
-          <div
-            class="project-overlay absolute inset-0 bg-alfa-dark/95 opacity-0 transition duration-300 flex flex-col justify-center items-center text-center p-6 backdrop-blur-sm">
-            <h3 class="text-2xl font-bold mb-2">Mila Crush 🍔</h3>
-            <p class="text-sm text-slate-300 mb-6">
-              Landing Page + Gestión de Pedidos
-            </p>
+        <!-- Carousel Track -->
+        <div id="projects-carousel"
+          class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-12 pt-4 px-4 sm:px-6 lg:px-8 -mx-4 sm:-mx-6 lg:-mx-8 hide-scrollbar scroll-smooth">
+
+          <!-- Proyecto 1: Kiosco Kubo (Más Nuevo) -->
+          <a href="https://sistema-kiosco-rouge.vercel.app/" target="_blank" rel="noopener noreferrer"
+            class="reveal project-card snap-center shrink-0 w-[85vw] md:w-[600px] group relative rounded-2xl overflow-hidden bg-slate-800 aspect-[16/10] cursor-pointer shadow-2xl hover:shadow-alfa-coral/50 transition border border-slate-700/50"
+            data-category="web">
             <div
-              class="text-alfa-coral text-xs font-bold uppercase tracking-widest border border-alfa-coral px-4 py-2 rounded hover:bg-alfa-coral hover:text-white transition inline-block">
-              Ver Proyecto
+              class="absolute top-4 right-4 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full z-20 shadow-lg uppercase tracking-wider">
+              En Curso
             </div>
-          </div>
-        </a>
-
-        <!-- Proyecto 2: CV Argentina -->
-        <a href="https://cvarg.pages.dev/#" target="_blank" rel="noopener noreferrer"
-          class="reveal delay-100 project-card group relative rounded-2xl overflow-hidden bg-slate-800 w-full aspect-[16/10] cursor-pointer shadow-2xl hover:shadow-2xl hover:shadow-alfa-coral/50 transition"
-          data-category="web">
-          <div
-            class="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full z-20 shadow-lg uppercase tracking-wider">
-            Finalizado
-          </div>
-          <img src="img/cv-argentina-new.png" alt="Vista previa de CV Argentina"
-            class="absolute inset-0 w-full h-full object-cover object-top transition duration-700 group-hover:scale-110" />
-
-          <!-- Superposición (Overlay) -->
-          <div
-            class="project-overlay absolute inset-0 bg-alfa-dark/95 opacity-0 transition duration-300 flex flex-col justify-center items-center text-center p-6 backdrop-blur-sm">
-            <h3 class="text-2xl font-bold mb-2">CV Argentina 💼</h3>
-            <p class="text-sm text-slate-300 mb-6">Plataforma Profesional</p>
+            <!-- Etiqueta de Credenciales -->
             <div
-              class="text-alfa-coral text-xs font-bold uppercase tracking-widest border border-alfa-coral px-4 py-2 rounded hover:bg-alfa-coral hover:text-white transition inline-block">
-              Ver Proyecto
+              class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur border border-slate-700 text-slate-300 text-[10px] md:text-xs font-mono font-bold px-3 py-1 rounded-lg z-20 shadow-lg flex items-center gap-2">
+              <i class="fas fa-key text-alfa-coral"></i>
+              <span>admin / admin123</span>
             </div>
-          </div>
-        </a>
+
+            <img src="img/kubo.png" alt="Vista previa de Kubo"
+              class="absolute inset-0 w-full h-full object-contain bg-slate-900 transition duration-700 group-hover:scale-105" />
+            <div
+              class="project-overlay absolute inset-0 bg-alfa-dark/95 opacity-0 transition duration-300 flex flex-col justify-center items-center text-center p-6 backdrop-blur-sm">
+              <h3 class="text-2xl font-bold mb-2">Kubo 📦</h3>
+              <p class="text-sm text-slate-300 mb-2">Sistema de Gestión de Kiosco</p>
+
+              <div
+                class="text-alfa-coral text-xs font-bold uppercase tracking-widest border border-alfa-coral px-4 py-2 rounded hover:bg-alfa-coral hover:text-white transition inline-block">
+                Ver Proyecto
+              </div>
+            </div>
+          </a>
+
+          <!-- Proyecto 2: CV Argentina -->
+          <a href="https://cvarg.pages.dev/#" target="_blank" rel="noopener noreferrer"
+            class="reveal delay-100 project-card snap-center shrink-0 w-[85vw] md:w-[600px] group relative rounded-2xl overflow-hidden bg-slate-800 aspect-[16/10] cursor-pointer shadow-2xl hover:shadow-alfa-coral/50 transition border border-slate-700/50"
+            data-category="web">
+            <div
+              class="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full z-20 shadow-lg uppercase tracking-wider">
+              Finalizado
+            </div>
+            <img src="img/cv.png" alt="Vista previa de CV Argentina"
+              class="absolute inset-0 w-full h-full object-cover object-top transition duration-700 group-hover:scale-110" />
+            <div
+              class="project-overlay absolute inset-0 bg-alfa-dark/95 opacity-0 transition duration-300 flex flex-col justify-center items-center text-center p-6 backdrop-blur-sm">
+              <h3 class="text-2xl font-bold mb-2">CV Argentina 💼</h3>
+              <p class="text-sm text-slate-300 mb-6">Plataforma Profesional</p>
+              <div
+                class="text-alfa-coral text-xs font-bold uppercase tracking-widest border border-alfa-coral px-4 py-2 rounded hover:bg-alfa-coral hover:text-white transition inline-block">
+                Ver Proyecto
+              </div>
+            </div>
+          </a>
+
+          <!-- Proyecto 3: Mila Crush -->
+          <a href="http://mila-crush.vercel.app/" target="_blank" rel="noopener noreferrer"
+            class="reveal delay-200 project-card snap-center shrink-0 w-[85vw] md:w-[600px] group relative rounded-2xl overflow-hidden bg-slate-800 aspect-[16/10] cursor-pointer shadow-2xl hover:shadow-alfa-coral/50 transition border border-slate-700/50"
+            data-category="web">
+            <div
+              class="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full z-20 shadow-lg uppercase tracking-wider">
+              Finalizado
+            </div>
+            <img src="img/mila-crush-preview.png" alt="Vista previa de Mila Crush"
+              class="absolute inset-0 w-full h-full object-cover object-top transition duration-700 group-hover:scale-110" />
+            <div
+              class="project-overlay absolute inset-0 bg-alfa-dark/95 opacity-0 transition duration-300 flex flex-col justify-center items-center text-center p-6 backdrop-blur-sm">
+              <h3 class="text-2xl font-bold mb-2">Mila Crush 🍔</h3>
+              <p class="text-sm text-slate-300 mb-6">Landing Page + Gestión de Pedidos</p>
+              <div
+                class="text-alfa-coral text-xs font-bold uppercase tracking-widest border border-alfa-coral px-4 py-2 rounded hover:bg-alfa-coral hover:text-white transition inline-block">
+                Ver Proyecto
+              </div>
+            </div>
+          </a>
+
+        </div>
       </div>
     </div>
   </section>
