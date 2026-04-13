@@ -347,131 +347,164 @@
         </div>
       </div>
 
-      <!-- Carousel Container Wrapper -->
-      <div class="relative group/carousel">
-        <!-- Navigation Buttons -->
-        <button onclick="scrollCarousel(-1)"
-          class="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-md border border-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-alfa-coral hover:border-alfa-coral transition opacity-0 group-hover/carousel:opacity-100 disabled:opacity-0">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button onclick="scrollCarousel(1)"
-          class="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-md border border-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-alfa-coral hover:border-alfa-coral transition opacity-0 group-hover/carousel:opacity-100 disabled:opacity-0">
-          <i class="fas fa-chevron-right"></i>
-        </button>
+      <div class="relative mt-8">
+        <!-- Grid de Proyectos Tipo Bento Box -->
+        <div id="projects-grid"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <!-- Carousel Track -->
-        <div id="projects-carousel"
-          class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-12 pt-4 px-4 sm:px-6 lg:px-8 -mx-4 sm:-mx-6 lg:-mx-8 hide-scrollbar scroll-smooth">
+          <!-- Proyecto Nuevo: UTN Hub (Destacado - Ocupa 2 columnas) -->
+          <a href="https://utnhub.com/" target="_blank" rel="noopener noreferrer"
+            class="reveal project-card group relative rounded-3xl overflow-hidden bg-[#1E293B] border border-white/10 hover:border-alfa-coral/50 transition-all duration-700 hover:shadow-[0_0_40px_-10px_rgba(255,107,107,0.3)] md:col-span-2 min-h-[400px] md:min-h-[450px]"
+            data-category="web">
+            <div
+              class="absolute top-6 right-6 z-20 backdrop-blur-md bg-emerald-500/90 border border-emerald-400 text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg">
+              Finalizado
+            </div>
+            <!-- Cambié a object-cover con object-center para que no se corte feo, y eliminé el aspect ratio forzado de las filas -->
+            <img src="img/utnhub.png" alt="Vista previa de UTN Hub"
+              class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-[1.5s] ease-out group-hover:scale-[1.05] opacity-50 md:opacity-100 mix-blend-overlay md:mix-blend-normal" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/80 md:via-[#0f172a]/40 to-transparent opacity-90 transition-opacity duration-500 z-10">
+            </div>
 
-          <!-- Proyecto 1: Kiosco Kubo (Más Nuevo) -->
+            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end z-20">
+              <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                <p class="text-alfa-coral text-xs md:text-sm font-bold mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 tracking-wider uppercase">Plataforma Web</p>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white mb-3 leading-tight">UTN Hub</h3>
+                <p class="text-slate-300 text-sm md:text-base mb-6 max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">Plataforma Universitaria integral con un diseño moderno y optimizado para la comunidad estudiantil.</p>
+
+                <div class="inline-flex items-center gap-3 text-white font-medium group/btn">
+                  <span class="relative overflow-hidden font-bold text-sm md:text-base">
+                    Visitar Web
+                    <span class="absolute bottom-0 left-0 w-full h-[2px] bg-alfa-coral -translate-x-[105%] group-hover/btn:translate-x-0 transition-transform duration-300"></span>
+                  </span>
+                  <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 flex items-center justify-center group-hover/btn:bg-alfa-coral transition-colors duration-300 backdrop-blur-sm">
+                    <i class="fas fa-arrow-right -rotate-45 group-hover/btn:rotate-0 transition-transform duration-300 text-sm md:text-base"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Proyecto 1: Kiosco Kubo -->
           <a href="https://sistema-kiosco-rouge.vercel.app/" target="_blank" rel="noopener noreferrer"
-            class="reveal project-card snap-center shrink-0 w-[85vw] md:w-[600px] group relative rounded-2xl overflow-hidden bg-slate-800 aspect-[16/10] cursor-pointer shadow-2xl hover:shadow-alfa-coral/50 transition border border-slate-700/50"
+            class="reveal delay-100 project-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-white/10 hover:border-alfa-coral/50 transition-all duration-700 hover:shadow-[0_0_40px_-10px_rgba(255,107,107,0.3)] col-span-1 min-h-[350px]"
             data-category="sistema">
             <div
-              class="absolute top-4 right-4 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full z-20 shadow-lg uppercase tracking-wider">
-              En Curso
+              class="absolute top-5 right-5 z-20 backdrop-blur-md bg-emerald-500/90 border border-emerald-400 text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest flex items-center gap-2">
+              Finalizado
             </div>
-            <!-- Etiqueta de Credenciales -->
-            <div
-              class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur border border-slate-700 text-slate-300 text-[10px] md:text-xs font-mono font-bold px-3 py-1 rounded-lg z-20 shadow-lg flex items-center gap-2">
-              <i class="fas fa-key text-alfa-coral"></i>
-              <span>admin / admin123</span>
-            </div>
-
+            
             <img src="img/kubo.png" alt="Vista previa de Kubo"
-              class="absolute inset-0 w-full h-full object-contain bg-slate-900 transition duration-700 group-hover:scale-105" />
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.05] opacity-60 mix-blend-overlay md:mix-blend-normal md:opacity-80" />
             <div
-              class="project-overlay absolute inset-0 bg-alfa-dark/95 opacity-0 transition duration-300 flex flex-col justify-center items-center text-center p-6 backdrop-blur-sm">
-              <h3 class="text-2xl font-bold mb-2">Kubo 📦</h3>
-              <p class="text-sm text-slate-300 mb-2">Sistema de Gestión de Kiosco</p>
+              class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-10">
+            </div>
 
-              <div
-                class="text-alfa-coral text-xs font-bold uppercase tracking-widest border border-alfa-coral px-4 py-2 rounded hover:bg-alfa-coral hover:text-white transition inline-block">
-                Ver Proyecto
+            <div class="absolute inset-0 p-6 flex flex-col justify-end z-20">
+              <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                <p class="text-alfa-coral text-xs font-bold mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 tracking-wider uppercase">Sistema Web</p>
+                <h3 class="text-2xl font-bold text-white mb-2 leading-tight">Kubo POS</h3>
+                
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mt-4 gap-3">
+                  <div class="inline-flex items-center gap-2 text-white text-sm font-medium group/btn">
+                    <span>Explorar</span>
+                    <i class="fas fa-arrow-right text-alfa-coral transform -translate-x-2 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100 transition-all duration-300"></i>
+                  </div>
+                  <div class="bg-black/50 backdrop-blur border border-white/10 text-slate-300 text-[10px] font-mono px-3 py-1 rounded-lg w-max">
+                    admin / admin123
+                  </div>
+                </div>
               </div>
             </div>
           </a>
 
           <!-- Proyecto 2: Quince de Valentina -->
           <a href="https://quince-muestra.vercel.app/" target="_blank" rel="noopener noreferrer"
-            class="reveal delay-100 project-card snap-center shrink-0 w-[85vw] md:w-[600px] group relative rounded-2xl overflow-hidden bg-slate-800 aspect-[16/10] cursor-pointer shadow-2xl hover:shadow-alfa-coral/50 transition border border-slate-700/50"
+            class="reveal delay-200 project-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-white/10 hover:border-alfa-coral/50 transition-all duration-700 hover:shadow-[0_0_40px_-10px_rgba(255,107,107,0.3)] col-span-1 min-h-[300px]"
             data-category="web">
+            <img src="img/Quince.png" alt="Quince de Valentina"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.08] opacity-80" />
             <div
-              class="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full z-20 shadow-lg uppercase tracking-wider">
-              Finalizado
+              class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-10">
             </div>
-            <img src="img/Quince.png" alt="Vista previa de Quince de Valentina"
-              class="absolute inset-0 w-full h-full object-cover object-center transition duration-700 group-hover:scale-110" />
-            <div
-              class="project-overlay absolute inset-0 bg-alfa-dark/95 opacity-0 transition duration-300 flex flex-col justify-center items-center text-center p-6 backdrop-blur-sm">
-              <h3 class="text-2xl font-bold mb-2">Quince de Valentina 🎂</h3>
-              <p class="text-sm text-slate-300 mb-6">Invitación Digital + RSVP</p>
-              <div
-                class="text-alfa-coral text-xs font-bold uppercase tracking-widest border border-alfa-coral px-4 py-2 rounded hover:bg-alfa-coral hover:text-white transition inline-block">
-                Ver Proyecto
+            <div class="absolute inset-0 p-6 flex flex-col justify-end z-20">
+              <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                <h3 class="text-xl font-bold text-white mb-1">Quince de Valen</h3>
+                <p class="text-slate-300 text-xs mb-3">Invitación Digital</p>
+                <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-alfa-coral transition-colors duration-300 backdrop-blur-sm">
+                  <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-sm"></i>
+                </div>
               </div>
             </div>
           </a>
 
           <!-- Proyecto 3: Casamiento Fernando & Alejandra -->
           <a href="https://casamiento-muestra.vercel.app/" target="_blank" rel="noopener noreferrer"
-            class="reveal delay-200 project-card snap-center shrink-0 w-[85vw] md:w-[600px] group relative rounded-2xl overflow-hidden bg-slate-800 aspect-[16/10] cursor-pointer shadow-2xl hover:shadow-alfa-coral/50 transition border border-slate-700/50"
+            class="reveal delay-300 project-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-white/10 hover:border-alfa-coral/50 transition-all duration-700 hover:shadow-[0_0_40px_-10px_rgba(255,107,107,0.3)] col-span-1 min-h-[300px]"
             data-category="web">
+            <img src="img/Casamiento.png" alt="Casamiento Fernando y Alejandra"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.08] opacity-80" />
             <div
-              class="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full z-20 shadow-lg uppercase tracking-wider">
-              Finalizado
+              class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-10">
             </div>
-            <img src="img/Casamiento.png" alt="Vista previa de Casamiento Fernando y Alejandra"
-              class="absolute inset-0 w-full h-full object-cover object-center transition duration-700 group-hover:scale-110" />
-            <div
-              class="project-overlay absolute inset-0 bg-alfa-dark/95 opacity-0 transition duration-300 flex flex-col justify-center items-center text-center p-6 backdrop-blur-sm">
-              <h3 class="text-2xl font-bold mb-2">Fernando & Alejandra 💒</h3>
-              <p class="text-sm text-slate-300 mb-6">Invitación de Casamiento + RSVP</p>
-              <div
-                class="text-alfa-coral text-xs font-bold uppercase tracking-widest border border-alfa-coral px-4 py-2 rounded hover:bg-alfa-coral hover:text-white transition inline-block">
-                Ver Proyecto
+            <div class="absolute inset-0 p-6 flex flex-col justify-end z-20">
+              <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                <h3 class="text-xl font-bold text-white mb-1">Fer & Ale</h3>
+                <p class="text-slate-300 text-xs mb-3">RSVP de Bodas</p>
+                <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-alfa-coral transition-colors duration-300 backdrop-blur-sm">
+                  <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-sm"></i>
+                </div>
               </div>
             </div>
           </a>
 
-          <!-- Proyecto 4: CV Argentina -->
-          <a href="https://cvarg.pages.dev/#" target="_blank" rel="noopener noreferrer"
-            class="reveal delay-300 project-card snap-center shrink-0 w-[85vw] md:w-[600px] group relative rounded-2xl overflow-hidden bg-slate-800 aspect-[16/10] cursor-pointer shadow-2xl hover:shadow-alfa-coral/50 transition border border-slate-700/50"
-            data-category="web">
-            <div
-              class="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full z-20 shadow-lg uppercase tracking-wider">
-              Finalizado
-            </div>
-            <img src="img/cv.png" alt="Vista previa de CV Argentina"
-              class="absolute inset-0 w-full h-full object-cover object-top transition duration-700 group-hover:scale-110" />
-            <div
-              class="project-overlay absolute inset-0 bg-alfa-dark/95 opacity-0 transition duration-300 flex flex-col justify-center items-center text-center p-6 backdrop-blur-sm">
-              <h3 class="text-2xl font-bold mb-2">CV Argentina 💼</h3>
-              <p class="text-sm text-slate-300 mb-6">Plataforma Profesional</p>
-              <div
-                class="text-alfa-coral text-xs font-bold uppercase tracking-widest border border-alfa-coral px-4 py-2 rounded hover:bg-alfa-coral hover:text-white transition inline-block">
-                Ver Proyecto
-              </div>
-            </div>
-          </a>
-
-          <!-- Proyecto 5: Mila Crush -->
+          <!-- Proyecto 4: Mila Crush -->
           <a href="http://mila-crush.vercel.app/" target="_blank" rel="noopener noreferrer"
-            class="reveal delay-400 project-card snap-center shrink-0 w-[85vw] md:w-[600px] group relative rounded-2xl overflow-hidden bg-slate-800 aspect-[16/10] cursor-pointer shadow-2xl hover:shadow-alfa-coral/50 transition border border-slate-700/50"
+            class="reveal delay-400 project-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-white/10 hover:border-alfa-coral/50 transition-all duration-700 hover:shadow-[0_0_40px_-10px_rgba(255,107,107,0.3)] md:col-span-2 lg:col-span-1 min-h-[300px]"
             data-category="web">
+            <img src="img/mila-crush-preview.png" alt="Mila Crush"
+              class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-[1.5s] ease-out group-hover:scale-[1.08] opacity-80" />
             <div
-              class="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full z-20 shadow-lg uppercase tracking-wider">
-              Finalizado
+              class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-10">
             </div>
-            <img src="img/mila-crush-preview.png" alt="Vista previa de Mila Crush"
-              class="absolute inset-0 w-full h-full object-cover object-top transition duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 p-6 flex flex-col justify-end z-20">
+              <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                <p class="text-alfa-coral text-xs font-bold mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 tracking-wider uppercase">Landing + Gestión</p>
+                <div class="flex justify-between items-end">
+                  <div>
+                    <h3 class="text-xl font-bold text-white mb-1 leading-tight">Mila Crush</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm">Emprendimiento FastFood</p>
+                  </div>
+                  <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-alfa-coral transition-colors duration-300 backdrop-blur-sm">
+                    <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-sm"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Proyecto 5: CV Arg -->
+          <a href="https://cvarg.pages.dev/#" target="_blank" rel="noopener noreferrer"
+            class="reveal delay-500 project-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-white/10 hover:border-alfa-coral/50 transition-all duration-700 hover:shadow-[0_0_40px_-10px_rgba(255,107,107,0.3)] md:col-span-2 lg:col-span-2 min-h-[300px]"
+            data-category="web">
+            <img src="img/cv.png" alt="CV Argentina"
+              class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-[1.5s] ease-out group-hover:scale-[1.08] opacity-80" />
             <div
-              class="project-overlay absolute inset-0 bg-alfa-dark/95 opacity-0 transition duration-300 flex flex-col justify-center items-center text-center p-6 backdrop-blur-sm">
-              <h3 class="text-2xl font-bold mb-2">Mila Crush 🍔</h3>
-              <p class="text-sm text-slate-300 mb-6">Landing Page + Gestión de Pedidos</p>
-              <div
-                class="text-alfa-coral text-xs font-bold uppercase tracking-widest border border-alfa-coral px-4 py-2 rounded hover:bg-alfa-coral hover:text-white transition inline-block">
-                Ver Proyecto
+              class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-10">
+            </div>
+            <div class="absolute inset-0 p-6 flex flex-col justify-end z-20">
+              <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                <p class="text-alfa-coral text-xs font-bold mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 tracking-wider uppercase">Portal Web</p>
+                <div class="flex justify-between items-end">
+                  <div>
+                    <h3 class="text-2xl font-bold text-white mb-1 leading-tight">CV Argentina</h3>
+                    <p class="text-slate-300 text-sm">Plataforma Creador CV</p>
+                  </div>
+                  <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-alfa-coral transition-colors duration-300 backdrop-blur-sm">
+                    <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                  </div>
+                </div>
               </div>
             </div>
           </a>
