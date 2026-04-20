@@ -180,3 +180,116 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* Ajustes responsive para la grilla de proyectos en celulares */
+@media (max-width: 767px) {
+  #projects-grid {
+    gap: 1rem;
+  }
+
+  .project-card {
+    min-height: 0 !important;
+    aspect-ratio: 16 / 10;
+    border-radius: 1.5rem;
+    isolation: isolate;
+  }
+
+  .project-card--featured {
+    aspect-ratio: 16 / 11;
+  }
+
+  .project-card-image {
+    opacity: 0.96 !important;
+    mix-blend-mode: normal !important;
+  }
+
+  .project-card-overlay {
+    opacity: 1 !important;
+    background: linear-gradient(
+      to top,
+      rgba(15, 23, 42, 0.96) 0%,
+      rgba(15, 23, 42, 0.6) 36%,
+      rgba(15, 23, 42, 0.16) 100%
+    ) !important;
+  }
+
+  .project-card-content {
+    padding: 1rem;
+  }
+
+  .project-card-copy {
+    transform: none !important;
+  }
+
+  .project-card-copy .opacity-0 {
+    opacity: 1 !important;
+  }
+
+  .project-card-status {
+    top: 0.875rem;
+    right: 0.875rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-main {
+    padding-top: 3.5rem;
+    padding-bottom: 2.75rem;
+  }
+
+  .footer-grid {
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-brand {
+    align-items: center;
+    text-align: center;
+    max-width: 22rem;
+    margin-inline: auto;
+  }
+
+  .footer-brand-logo {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .footer-brand-copy {
+    max-width: 20rem;
+    margin-inline: auto;
+  }
+
+  .footer-socials {
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 18rem;
+    margin-inline: auto;
+  }
+
+  .footer-title {
+    margin-bottom: 1rem;
+  }
+
+  .footer-links {
+    display: grid;
+    gap: 0.75rem;
+    justify-items: center;
+  }
+
+  .footer-divider {
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-bottom {
+    padding-inline: 0.5rem;
+  }
+}

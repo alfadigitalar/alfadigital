@@ -354,21 +354,21 @@
 
           <!-- Proyecto Nuevo: UTN Hub (Destacado - Ocupa 2 columnas) -->
           <a href="https://utnhub.com/" target="_blank" rel="noopener noreferrer"
-            class="reveal project-card group relative rounded-3xl overflow-hidden bg-[#1E293B] border border-white/10 hover:border-alfa-coral/50 transition-all duration-700 hover:shadow-[0_0_40px_-10px_rgba(255,107,107,0.3)] md:col-span-2 min-h-[400px] md:min-h-[450px]"
+            class="reveal project-card project-card--featured group relative rounded-3xl overflow-hidden bg-[#1E293B] border border-white/10 hover:border-alfa-coral/50 transition-all duration-700 hover:shadow-[0_0_40px_-10px_rgba(255,107,107,0.3)] md:col-span-2 min-h-[400px] md:min-h-[450px]"
             data-category="web">
             <div
-              class="absolute top-6 right-6 z-20 backdrop-blur-md bg-emerald-500/90 border border-emerald-400 text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg">
+              class="project-card-status absolute top-6 right-6 z-20 backdrop-blur-md bg-emerald-500/90 border border-emerald-400 text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg">
               Finalizado
             </div>
             <!-- Cambié a object-cover con object-center para que no se corte feo, y eliminé el aspect ratio forzado de las filas -->
             <img src="img/utnhub.png" alt="Vista previa de UTN Hub"
-              class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-[1.5s] ease-out group-hover:scale-[1.05] opacity-50 md:opacity-100 mix-blend-overlay md:mix-blend-normal" />
+              class="project-card-image absolute inset-0 w-full h-full object-cover object-center transition-transform duration-[1.5s] ease-out group-hover:scale-[1.05] opacity-50 md:opacity-100 mix-blend-overlay md:mix-blend-normal" />
             <div
-              class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/80 md:via-[#0f172a]/40 to-transparent opacity-90 transition-opacity duration-500 z-10">
+              class="project-card-overlay absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/80 md:via-[#0f172a]/40 to-transparent opacity-90 transition-opacity duration-500 z-10">
             </div>
 
-            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end z-20">
-              <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+            <div class="project-card-content absolute inset-0 p-6 md:p-8 flex flex-col justify-end z-20">
+              <div class="project-card-copy transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
                 <p class="text-alfa-coral text-xs md:text-sm font-bold mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 tracking-wider uppercase">Plataforma Web</p>
                 <h3 class="text-3xl md:text-4xl font-extrabold text-white mb-3 leading-tight">UTN Hub</h3>
                 <p class="text-slate-300 text-sm md:text-base mb-6 max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">Plataforma Universitaria integral con un diseño moderno y optimizado para la comunidad estudiantil.</p>
@@ -391,18 +391,18 @@
             class="reveal delay-100 project-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-white/10 hover:border-alfa-coral/50 transition-all duration-700 hover:shadow-[0_0_40px_-10px_rgba(255,107,107,0.3)] col-span-1 min-h-[350px]"
             data-category="sistema">
             <div
-              class="absolute top-5 right-5 z-20 backdrop-blur-md bg-emerald-500/90 border border-emerald-400 text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest flex items-center gap-2">
+              class="project-card-status absolute top-5 right-5 z-20 backdrop-blur-md bg-emerald-500/90 border border-emerald-400 text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest flex items-center gap-2">
               Finalizado
             </div>
             
             <img src="img/kubo.png" alt="Vista previa de Kubo"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.05] opacity-60 mix-blend-overlay md:mix-blend-normal md:opacity-80" />
+              class="project-card-image absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.05] opacity-60 mix-blend-overlay md:mix-blend-normal md:opacity-80" />
             <div
-              class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-10">
+              class="project-card-overlay absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-10">
             </div>
 
-            <div class="absolute inset-0 p-6 flex flex-col justify-end z-20">
-              <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+            <div class="project-card-content absolute inset-0 p-6 flex flex-col justify-end z-20">
+              <div class="project-card-copy transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
                 <p class="text-alfa-coral text-xs font-bold mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 tracking-wider uppercase">Sistema Web</p>
                 <h3 class="text-2xl font-bold text-white mb-2 leading-tight">Kubo POS</h3>
                 
@@ -424,12 +424,12 @@
             class="reveal delay-200 project-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-white/10 hover:border-alfa-coral/50 transition-all duration-700 hover:shadow-[0_0_40px_-10px_rgba(255,107,107,0.3)] col-span-1 min-h-[300px]"
             data-category="web">
             <img src="img/Quince.png" alt="Quince de Valentina"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.08] opacity-80" />
+              class="project-card-image absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.08] opacity-80" />
             <div
-              class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-10">
+              class="project-card-overlay absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-10">
             </div>
-            <div class="absolute inset-0 p-6 flex flex-col justify-end z-20">
-              <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+            <div class="project-card-content absolute inset-0 p-6 flex flex-col justify-end z-20">
+              <div class="project-card-copy transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
                 <h3 class="text-xl font-bold text-white mb-1">Quince de Valen</h3>
                 <p class="text-slate-300 text-xs mb-3">Invitación Digital</p>
                 <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-alfa-coral transition-colors duration-300 backdrop-blur-sm">
@@ -444,12 +444,12 @@
             class="reveal delay-300 project-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-white/10 hover:border-alfa-coral/50 transition-all duration-700 hover:shadow-[0_0_40px_-10px_rgba(255,107,107,0.3)] col-span-1 min-h-[300px]"
             data-category="web">
             <img src="img/Casamiento.png" alt="Casamiento Fernando y Alejandra"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.08] opacity-80" />
+              class="project-card-image absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.08] opacity-80" />
             <div
-              class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-10">
+              class="project-card-overlay absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-10">
             </div>
-            <div class="absolute inset-0 p-6 flex flex-col justify-end z-20">
-              <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+            <div class="project-card-content absolute inset-0 p-6 flex flex-col justify-end z-20">
+              <div class="project-card-copy transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
                 <h3 class="text-xl font-bold text-white mb-1">Fer & Ale</h3>
                 <p class="text-slate-300 text-xs mb-3">RSVP de Bodas</p>
                 <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-alfa-coral transition-colors duration-300 backdrop-blur-sm">
@@ -464,12 +464,12 @@
             class="reveal delay-400 project-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-white/10 hover:border-alfa-coral/50 transition-all duration-700 hover:shadow-[0_0_40px_-10px_rgba(255,107,107,0.3)] md:col-span-2 lg:col-span-1 min-h-[300px]"
             data-category="web">
             <img src="img/mila-crush-preview.png" alt="Mila Crush"
-              class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-[1.5s] ease-out group-hover:scale-[1.08] opacity-80" />
+              class="project-card-image absolute inset-0 w-full h-full object-cover object-top transition-transform duration-[1.5s] ease-out group-hover:scale-[1.08] opacity-80" />
             <div
-              class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-10">
+              class="project-card-overlay absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-10">
             </div>
-            <div class="absolute inset-0 p-6 flex flex-col justify-end z-20">
-              <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+            <div class="project-card-content absolute inset-0 p-6 flex flex-col justify-end z-20">
+              <div class="project-card-copy transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
                 <p class="text-alfa-coral text-xs font-bold mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 tracking-wider uppercase">Landing + Gestión</p>
                 <div class="flex justify-between items-end">
                   <div>
@@ -489,12 +489,12 @@
             class="reveal delay-500 project-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-white/10 hover:border-alfa-coral/50 transition-all duration-700 hover:shadow-[0_0_40px_-10px_rgba(255,107,107,0.3)] md:col-span-2 lg:col-span-2 min-h-[300px]"
             data-category="web">
             <img src="img/cv.png" alt="CV Argentina"
-              class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-[1.5s] ease-out group-hover:scale-[1.08] opacity-80" />
+              class="project-card-image absolute inset-0 w-full h-full object-cover object-top transition-transform duration-[1.5s] ease-out group-hover:scale-[1.08] opacity-80" />
             <div
-              class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-10">
+              class="project-card-overlay absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-10">
             </div>
-            <div class="absolute inset-0 p-6 flex flex-col justify-end z-20">
-              <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+            <div class="project-card-content absolute inset-0 p-6 flex flex-col justify-end z-20">
+              <div class="project-card-copy transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
                 <p class="text-alfa-coral text-xs font-bold mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 tracking-wider uppercase">Portal Web</p>
                 <div class="flex justify-between items-end">
                   <div>
@@ -1245,21 +1245,21 @@
 
   <!-- Footer (Pie de página) -->
   <!-- Footer -->
-  <footer class="bg-slate-50 text-slate-800 py-16 border-t border-slate-200">
+  <footer class="footer-main bg-slate-50 text-slate-800 py-16 border-t border-slate-200">
     <div class="max-w-screen-2xl mx-auto px-4">
       <!-- Contenido Principal del Footer -->
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      <div class="footer-grid grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
         <!-- Marca -->
-        <div class="flex flex-col items-start">
-          <div class="flex items-center gap-3 mb-6">
+        <div class="footer-brand flex flex-col items-center md:items-start">
+          <div class="footer-brand-logo flex items-center justify-center md:justify-start gap-3 mb-6">
             <img src="img/logo Alfa Digital sin fondo.png" alt="Alfa Digital Logo"
               class="logo-icon mb-0 hover:rotate-6 hover:scale-110 transition duration-500 ease-in-out"
               style="width: 120px; height: auto; object-fit: contain;" onerror="this.style.display='none'" />
           </div>
-          <p class="text-slate-500 text-sm leading-relaxed">
+          <p class="footer-brand-copy text-slate-500 text-sm leading-relaxed">
             Transformamos ideas en máquinas de ventas digitales. Diseño, desarrollo y estrategia en uno.
           </p>
-          <div class="flex gap-4 mt-6">
+          <div class="footer-socials flex justify-center md:justify-start gap-4 mt-6">
             <a href="https://instagram.com/alfadigital.ar" target="_blank"
               class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-white hover:bg-alfa-coral transition">
               <i class="fab fa-instagram text-lg"></i>
@@ -1282,9 +1282,9 @@
         </div>
 
         <!-- Servicios -->
-        <div>
-          <h4 class="font-bold text-alfa-dark mb-6 text-lg">Servicios</h4>
-          <ul class="space-y-3 text-slate-600 text-sm">
+        <div class="footer-column">
+          <h4 class="footer-title font-bold text-alfa-dark mb-6 text-lg">Servicios</h4>
+          <ul class="footer-links space-y-3 text-slate-600 text-sm">
             <li><a href="#servicios" class="hover:text-alfa-coral transition">Diseño Web & UX/UI</a></li>
             <li><a href="#servicios" class="hover:text-alfa-coral transition">Full Stack Dev</a></li>
             <li><a href="#servicios" class="hover:text-alfa-coral transition">Branding Digital</a></li>
@@ -1294,9 +1294,9 @@
         </div>
 
         <!-- Empresa -->
-        <div>
-          <h4 class="font-bold text-alfa-dark mb-6 text-lg">Empresa</h4>
-          <ul class="space-y-3 text-slate-600 text-sm">
+        <div class="footer-column">
+          <h4 class="footer-title font-bold text-alfa-dark mb-6 text-lg">Empresa</h4>
+          <ul class="footer-links space-y-3 text-slate-600 text-sm">
             <li><a href="#equipo" class="hover:text-alfa-coral transition">Nuestro Equipo</a></li>
             <li><a href="#casos-exito" class="hover:text-alfa-coral transition">Casos de Éxito</a></li>
             <li><a href="#metodologia" class="hover:text-alfa-coral transition">Metodología</a></li>
@@ -1306,9 +1306,9 @@
         </div>
 
         <!-- Legal & Info -->
-        <div>
-          <h4 class="font-bold text-alfa-dark mb-6 text-lg">Legal</h4>
-          <ul class="space-y-3 text-slate-600 text-sm">
+        <div class="footer-column">
+          <h4 class="footer-title font-bold text-alfa-dark mb-6 text-lg">Legal</h4>
+          <ul class="footer-links space-y-3 text-slate-600 text-sm">
             <li><a href="#" onclick="openLegal('terms'); return false;"
                 class="hover:text-alfa-coral transition">Términos de Servicio</a></li>
             <li><a href="#" onclick="openLegal('privacy'); return false;"
@@ -1322,11 +1322,11 @@
       </div>
 
       <!-- Divider -->
-      <div class="h-px bg-slate-200 mb-8"></div>
+      <div class="footer-divider h-px bg-slate-200 mb-8"></div>
 
       <!-- Bottom Footer -->
       <!-- Bottom Footer -->
-      <div class="flex justify-center items-center">
+      <div class="footer-bottom flex justify-center items-center">
         <p class="text-slate-500 text-sm text-center">
           &copy; 2025 Alfa Digital. Todos los derechos reservados.
         </p>
