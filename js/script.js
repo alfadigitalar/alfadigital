@@ -28,7 +28,7 @@ function animateValue(e, t, n, a) {
   const r = (i) => {
     o || (o = i);
     const c = Math.min((i - o) / a, 1);
-    (e.innerHTML = Math.floor(c * (n - t) + t) + (n > 50 ? "%" : "+")),
+    (e.innerHTML = Math.floor(c * (n - t) + t) + (n > 50 ? "%" : "")),
       c < 1 && window.requestAnimationFrame(r);
   };
   window.requestAnimationFrame(r);
