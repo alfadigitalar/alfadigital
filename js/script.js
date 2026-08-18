@@ -393,59 +393,132 @@ function initContactForm() {
    ============================================================ */
 function initLegalModal() {
   const modal = document.getElementById("legalModal");
-  const title = document.getElementById("legalModalTitle");
-  const body = document.getElementById("legalModalBody");
-  const closeBtn = document.getElementById("legalModalClose");
-  const confirmBtn = document.getElementById("legalModalConfirm");
+  const title = document.getElementById("modalTitle");
+  const body = document.getElementById("modalBody");
+  const closeBtn = document.getElementById("modalCloseBtn");
+  const privacyBtn = document.getElementById("openPrivacyModal");
+  const termsBtn = document.getElementById("openTermsModal");
 
   if (!modal || !title || !body) return;
 
   const legalContent = {
+    privacy: {
+      title: "Políticas de Privacidad",
+      body: `
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div>
+            <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 0.35rem;">1. Responsabilidad y Compromiso</h4>
+            <p>En <strong>Alfa Digital</strong> (Mendoza, Argentina), nos tomamos con máxima seriedad la protección de los datos personales y comerciales de nuestros clientes y visitantes, en estricto cumplimiento de la <strong>Ley N° 25.326 de Protección de Datos Personales</strong> de la República Argentina.</p>
+          </div>
+
+          <div>
+            <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 0.35rem;">2. Información que Recopilamos</h4>
+            <p>Solo recopilamos los datos que nos proporcionas de forma voluntaria a través de nuestro formulario de contacto o enlace directo de WhatsApp (nombre, teléfono/WhatsApp, correo electrónico y detalles del proyecto). No recolectamos información sensible ni instalamos rastreadores invasivos de terceros.</p>
+          </div>
+
+          <div>
+            <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 0.35rem;">3. Finalidad del Uso de Datos</h4>
+            <p>La información provista se utiliza exclusivamente para: (a) responder tus consultas comerciales en menos de 2 horas, (b) elaborar propuestas técnicas y presupuestos a medida, y (c) coordinar el desarrollo y entrega del software o sitio web contratado.</p>
+          </div>
+
+          <div>
+            <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 0.35rem;">4. Cero Venta o Cesión a Terceros</h4>
+            <p>Alfa Digital <strong>no vende, no alquila, no transfiere ni comparte</strong> bajo ninguna circunstancia datos de clientes con agencias de publicidad, bases de datos de telemarketing ni plataformas externas.</p>
+          </div>
+
+          <div>
+            <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 0.35rem;">5. Seguridad y Confidencialidad</h4>
+            <p>Implementamos estándares modernos de seguridad, cifrado SSL/HTTPS en tránsito y almacenamiento seguro con acceso restringido únicamente a los fundadores técnicos (Facundo Rodriguez y Alma Ponce).</p>
+          </div>
+
+          <div>
+            <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 0.35rem;">6. Derechos de Acceso y Supresión</h4>
+            <p>Tienes derecho en cualquier momento a solicitar el acceso, rectificación, actualización o eliminación definitiva de tus datos de contacto escribiéndonos a <a href="mailto:alfa.digital.arg@gmail.com" style="color: var(--accent-core); text-decoration: underline;">alfa.digital.arg@gmail.com</a> o por WhatsApp al <strong>+54 9 261 499-4711</strong>.</p>
+          </div>
+        </div>
+      `,
+    },
     terms: {
       title: "Términos del Servicio",
       body: `
-        <p><strong>1. Propuesta y Alcance:</strong> Cada proyecto se ejecuta bajo especificaciones técnicas acordadas formalmente en la propuesta de trabajo previa al inicio.</p>
-        <p><strong>2. Propiedad Intelectual:</strong> Tras la liquidación final del proyecto, el cliente retiene el 100% de los derechos de propiedad intelectual del código fuente, diseño y activos desarrollados.</p>
-        <p><strong>3. Garantía y Mantenimiento:</strong> Incluimos un período de garantía post-lanzamiento de 30 días corridos para corrección de incidencias o bugs sin costo adicional.</p>
-        <p><strong>4. Confidencialidad:</strong> Nos comprometemos a mantener bajo estricta confidencialidad toda la información estratégica y datos provistos por el cliente.</p>
-      `,
-    },
-    privacy: {
-      title: "Política de Privacidad",
-      body: `
-        <p><strong>1. Uso de Datos:</strong> Los datos de contacto provistos a través de nuestro formulario o canal de WhatsApp se utilizan exclusivamente para responder consultas y elaborar propuestas comerciales.</p>
-        <p><strong>2. No Tercerización:</strong> Alfa Digital no vende, comparte ni cede información personal ni corporativa a terceras partes bajo ninguna circunstancia.</p>
-        <p><strong>3. Seguridad:</strong> Implementamos estándares modernos de seguridad y encriptación en todos los sistemas y despliegues web que administramos.</p>
-      `,
-    },
-    cookies: {
-      title: "Política de Cookies",
-      body: `
-        <p>Este sitio web utiliza exclusivamente cookies técnicas esenciales y métricas anónimas de rendimiento para asegurar una navegación rápida, fluida y sin interrupciones.</p>
-        <p>Puedes gestionar o bloquear cookies en cualquier momento desde las preferencias de tu navegador web sin afectar la funcionalidad básica del sitio.</p>
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div>
+            <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 0.35rem;">1. Alcance del Servicio y Propuesta Técnica</h4>
+            <p>Todo proyecto de desarrollo web o software a medida se inicia tras acordar un alcance detallado (funcionalidades, secciones, módulos adicionales y plazos de entrega estimados) acordado entre el cliente y Alfa Digital.</p>
+          </div>
+
+          <div>
+            <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 0.35rem;">2. Esquema de Pago Transparente (50% / 50%)</h4>
+            <p>Trabajamos con un esquema de <strong>50% de anticipo</strong> para reservar calendario e iniciar el diseño y desarrollo en código, y el <strong>50% restante únicamente contra entrega final</strong> y aprobación en servidor de pruebas. Aceptamos transferencia bancaria en pesos (ARS) o dólares (USD), MercadoPago y USDT/Crypto.</p>
+          </div>
+
+          <div>
+            <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 0.35rem;">3. Propiedad Intelectual Total (100% Tuya)</h4>
+            <p>Al cancelar el saldo final del proyecto, <strong>el cliente adquiere el 100% de los derechos de propiedad</strong> sobre el código fuente, archivos de diseño, accesos al repositorio, dominio propio y credenciales del servidor. Alfa Digital no aplica licencias cautivas ("vendor lock-in") ni cobra comisiones recurrentes obligatorias.</p>
+          </div>
+
+          <div>
+            <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 0.35rem;">4. Garantía Técnica Post-Lanzamiento (30 Días)</h4>
+            <p>Todos nuestros proyectos incluyen <strong>30 días corridos de garantía técnica sin cargo</strong> posterior al lanzamiento para solucionar cualquier bug, error de carga o ajuste menor sin costo adicional.</p>
+          </div>
+
+          <div>
+            <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 0.35rem;">5. Tiempos de Entrega</h4>
+            <p>Los plazos estimados (Landing Pages: 3 a 5 días; Sitios Corporativos: 7 a 10 días; E-Commerce/Sistemas: 2 a 3 semanas) comienzan a computarse a partir de la recepción del anticipo y el material inicial provisto por el cliente (logos, textos o fotos base).</p>
+          </div>
+
+          <div>
+            <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 0.35rem;">6. Confidencialidad Absoluta</h4>
+            <p>Alfa Digital mantiene estricta reserva profesional sobre las ideas de negocio, bases de datos de clientes, productos y estrategias comerciales compartidas durante el proyecto.</p>
+          </div>
+        </div>
       `,
     },
   };
 
-  window.openLegalModal = function (type) {
+  function openModal(type) {
     const data = legalContent[type] || legalContent.terms;
     title.textContent = data.title;
     body.innerHTML = data.body;
     modal.classList.add("open");
     document.body.style.overflow = "hidden";
-  };
+  }
 
-  window.closeLegalModal = function () {
+  function closeModal() {
     modal.classList.remove("open");
     document.body.style.overflow = "";
-  };
+  }
 
-  if (closeBtn) closeBtn.addEventListener("click", closeLegalModal);
-  if (confirmBtn) confirmBtn.addEventListener("click", closeLegalModal);
+  if (privacyBtn) {
+    privacyBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openModal("privacy");
+    });
+  }
+
+  if (termsBtn) {
+    termsBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openModal("terms");
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      closeModal();
+    });
+  }
 
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {
-      closeLegalModal();
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("open")) {
+      closeModal();
     }
   });
 }
