@@ -88,6 +88,53 @@ p, span, h1, h2, h3, h4, h5, h6, a, button, label, li, strong {
   word-wrap: break-word;
 }
 
+/* --- Custom Sleek Dark-Mode Scrollbars --- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.16) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-body);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--bg-body);
+  transition: background var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-core);
+}
+
+.modal-body::-webkit-scrollbar,
+.mobile-menu-panel::-webkit-scrollbar {
+  width: 5px;
+}
+
+.modal-body::-webkit-scrollbar-track,
+.mobile-menu-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-body::-webkit-scrollbar-thumb,
+.mobile-menu-panel::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover,
+.mobile-menu-panel::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-core);
+}
+
 ::selection {
   background-color: var(--accent-core);
   color: #ffffff;
