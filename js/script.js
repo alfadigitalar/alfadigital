@@ -1,344 +1,383 @@
-// --- Menú Móvil ---
-const btn = document.getElementById("mobile-menu-btn"),
-  menu = document.getElementById("mobile-menu");
-btn.addEventListener("click", () => menu.classList.toggle("hidden"));
-// --- Función de Aparición al Scroll (Reveal) ---
-function reveal() {
-  var e = document.querySelectorAll(".reveal");
-  for (var t = 0; t < e.length; t++) {
-    var n = window.innerHeight;
-    e[t].getBoundingClientRect().top < n - 100 && e[t].classList.add("active");
-  }
-}
-window.addEventListener("scroll", reveal), reveal();
-// --- Lógica del Acordeón ---
-function toggleAccordion(e) {
-  const t = e.parentElement,
-    n = t.classList.contains("is-open");
-  document.querySelectorAll(".accordion-item").forEach((e) => {
-    e.classList.remove("is-open");
-  }),
-    n || t.classList.add("is-open");
-}
-let counterStarted = !1;
-// --- Animación de Contadores Estadísticos ---
-const statsSection = document.getElementById("metodologia");
-function animateValue(e, t, n, a) {
-  let o = null;
-  const r = (i) => {
-    o || (o = i);
-    const c = Math.min((i - o) / a, 1);
-    (e.innerHTML = Math.floor(c * (n - t) + t) + (n > 50 ? "%" : "")),
-      c < 1 && window.requestAnimationFrame(r);
-  };
-  window.requestAnimationFrame(r);
-}
-window.addEventListener("scroll", () => {
-  window.scrollY + window.innerHeight > statsSection.offsetTop &&
-    !counterStarted &&
-    ((counterStarted = !0),
-    document.querySelectorAll(".counter").forEach((e) => {
-      const t = +e.getAttribute("data-target");
-      animateValue(e, 0, t, 2e3);
-    }));
-});
-// --- Filtrado de Proyectos ---
-function filterProjects(e) {
-  const t = document.querySelectorAll(".project-card"),
-    n = document.querySelectorAll(".filter-btn");
-  n.forEach((t) => {
-    t.classList.remove("bg-white", "text-alfa-dark", "ring-2", "ring-white"),
-      t.classList.add("border", "text-slate-300"),
-      t.innerText.toLowerCase().includes("all" === e ? "todos" : e) &&
-        (t.classList.remove("border", "text-slate-300"),
-        t.classList.add("bg-white", "text-alfa-dark", "ring-2", "ring-white"));
-  }),
-    t.forEach((t) => {
-      "all" === e || t.dataset.category === e
-        ? (t.parentElement.classList.remove("hidden"),
-          (t.style.display = "block"),
-          (t.style.animation = "none"),
-          t.offsetHeight,
-          (t.style.animation = "fadeInUp 0.5s ease-out forwards"))
-        : (t.style.display = "none");
-    });
-}
-// --- Manejo del Formulario de Contacto ---
-function handleContact(e) {
-  e.preventDefault();
-  const t = e.target,
-    n = document.getElementById("success-msg"),
-    a = t.querySelector("button"),
-    o = a.innerHTML;
-  (a.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...'),
-    (a.disabled = !0);
-  const r = new FormData(t);
-  fetch("https://formsubmit.co/ajax/alfa.digital.arg@gmail.com", {
-    method: "POST",
-    body: r,
-  })
-    .then((e) => e.json())
-    .then((e) => {
-      n.classList.remove("hidden"), t.reset();
-    })
-    .catch((e) => {
-      console.error("Error:", e),
-        alert(
-          "Hubo un error al enviar el mensaje. Por favor intenta nuevamente."
-        );
-    })
-    .finally(() => {
-      (a.innerHTML = o), (a.disabled = !1);
-    });
-}
-function resetForm() {
-  document.getElementById("success-msg").classList.add("hidden");
-}
-// --- Inicialización al Cargar el DOM ---
+/**
+ * ALFA DIGITAL — Studio Interaction Engine
+ * Ultra-Fluid 120 FPS Architecture (No layout thrashing, 0 scroll lag)
+ */
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Configuración del Gráfico de ROI
-  const e = document.getElementById("roiChart").getContext("2d");
-  new Chart(e, {
-    type: "line",
-    data: {
-      labels: [
-        "Idea",
-        "Estrategia",
-        "Diseño",
-        "Desarrollo",
-        "Lanzamiento",
-        "Escalado",
-      ],
-      datasets: [
-        {
-          label: "Impacto Digital",
-          data: [15, 35, 55, 75, 95, 100],
-          borderColor: "#1E293B",
-          backgroundColor: (e) => {
-            const t = e.chart.ctx.createLinearGradient(0, 0, 0, 300);
-            return (
-              t.addColorStop(0, "rgba(30, 41, 59, 0.2)"),
-              t.addColorStop(1, "rgba(30, 41, 59, 0)"),
-              t
-            );
-          },
-          borderWidth: 3,
-          fill: !0,
-          tension: 0.4,
-          pointBackgroundColor: "#FF6B6B",
-          pointRadius: 5,
-          pointHoverRadius: 8,
-        },
-      ],
-    },
-    options: {
-      responsive: !0,
-      maintainAspectRatio: !1,
-      plugins: { legend: { display: !0, position: "bottom" } },
-      scales: {
-        y: {
-          grid: { display: !0, color: "#f1f5f9" },
-          beginAtZero: !0,
-          max: 100,
-          ticks: {
-            callback: function (e) {
-              return e + "%";
-            },
-          },
-        },
-        x: { grid: { display: !1 } },
-      },
-    },
-  });
-  // --- Modal Legal ---
-  const t = document.getElementById("legalModal"),
-    n = document.getElementById("legalBackdrop"),
-    a = document.getElementById("legalContent"),
-    o = document.getElementById("legalTitle"),
-    r = document.getElementById("legalBody"),
-    i = {
-      terms: {
-        title: "Términos de Servicio",
-        content:
-          '<p>Bienvenido a Alfa Digital. Al utilizar nuestros servicios, aceptas los siguientes términos básicos:</p><ul class="list-disc pl-5 space-y-2"><li><strong>Servicios:</strong> Proveemos desarrollo web y diseño digital bajo contrato.</li><li><strong>Pagos:</strong> Se requiere un 50% de anticipo para comenzar cualquier proyecto.</li><li><strong>Propiedad:</strong> El cliente retiene el 100% de los derechos sobre el código entregado tras el pago final.</li><li><strong>Garantía:</strong> Ofrecemos 30 días de corrección de errores post-lanzamiento.</li></ul>',
-      },
-      privacy: {
-        title: "Política de Privacidad",
-        content:
-          '<p>En Alfa Digital, nos tomamos tu privacidad en serio.</p><ul class="list-disc pl-5 space-y-2"><li><strong>Datos:</strong> Solo recopilamos los datos necesarios para el contacto y facturación.</li><li><strong>No Compartir:</strong> Nunca vendemos ni compartimos tu información con terceros.</li><li><strong>Seguridad:</strong> Utilizamos estándares de encriptación modernos para proteger tus datos.</li></ul>',
-      },
-      cookies: {
-        title: "Uso de Cookies",
-        content:
-          '<p>Utilizamos cookies esenciales para el funcionamiento del sitio:</p><ul class="list-disc pl-5 space-y-2"><li><strong>Analíticas:</strong> Para entender cómo interactúas con nuestra web y mejorarla.</li><li><strong>Preferencias:</strong> Para recordar tu idioma o configuración.</li></ul><p class="text-sm mt-4">Puedes desactivarlas en la configuración de tu navegador en cualquier momento.</p>',
-      },
-      report: {
-        title: "Reportar Problema",
-        content:
-          '<p>¿Encontraste un error en nuestra web o en un proyecto?</p><p>Por favor, envíanos un correo directamente a <strong class="text-alfa-coral">soporte@alfadigital.com</strong> con:</p><ul class="list-disc pl-5 space-y-2"><li>Captura de pantalla del error.</li><li>Descripción breve de lo sucedido.</li><li>Dispositivo y navegador que usabas.</li></ul><p class="mt-4">Te responderemos en menos de 24 horas.</p>',
-      },
-    };
-  (window.openLegal = function (e) {
-    const c = i[e];
-    c &&
-      ((o.innerText = c.title),
-      (r.innerHTML = c.content),
-      t.classList.remove("hidden"),
-      setTimeout(() => {
-        n.classList.remove("opacity-0"),
-          a.classList.remove("scale-95", "opacity-0");
-      }, 10));
-  }),
-    (window.closeLegal = function () {
-      n.classList.add("opacity-0"),
-        a.classList.add("scale-95", "opacity-0"),
-        setTimeout(() => {
-          t.classList.add("hidden");
-        }, 300);
-    }),
-    t.addEventListener("click", (e) => {
-      (e.target !== n && "legalModal" !== e.target.id) || closeLegal();
-    });
-  // --- Animación del Canvas (Hero) ---
-  const c = document.getElementById("heroCanvas"),
-    l = c.getContext("2d"),
-    s = document.getElementById("hero");
-  let d,
-    u,
-    g = [];
-  let m = { x: null, y: null, radius: 250 };
-  window.addEventListener("mousemove", (e) => {
-    const t = c.getBoundingClientRect();
-    (m.x = e.clientX - t.left), (m.y = e.clientY - t.top);
-  }),
-    window.addEventListener("mouseout", () => {
-      (m.x = null), (m.y = null);
-    });
-  function p() {
-    (d = c.width = s.offsetWidth), (u = c.height = s.offsetHeight);
-  }
-  // Clase Partícula
-  class f {
-    constructor() {
-      (this.x = Math.random() * d),
-        (this.y = Math.random() * u),
-        (this.baseSize = 2 * Math.random() + 1),
-        (this.size = this.baseSize),
-        (this.speedX = 0.4 * Math.random() - 0.2),
-        (this.speedY = 0.4 * Math.random() - 0.2),
-        (this.baseColor = "rgba(148, 163, 184, 0.6)"),
-        (this.activeColor = "rgba(255, 107, 107, 1)"),
-        (this.r = 148),
-        (this.g = 163),
-        (this.b = 184),
-        (this.a = 0.9);
-    }
-    draw() {
-      (l.fillStyle = `rgba(${this.r}, ${this.g}, ${this.b}, ${this.a})`),
-        l.beginPath(),
-        l.arc(this.x, this.y, this.size, 0, 2 * Math.PI),
-        l.fill();
-    }
-    update() {
-      if (
-        ((this.x += this.speedX),
-        (this.y += this.speedY),
-        (this.x < 0 || this.x > d) && (this.speedX = -this.speedX),
-        (this.y < 0 || this.y > u) && (this.speedY = -this.speedY),
-        null != m.x)
-      ) {
-        let e = m.x - this.x,
-          t = m.y - this.y;
-        if (Math.sqrt(e * e + t * t) < m.radius) {
-          let e =
-            1 -
-            Math.sqrt(Math.pow(m.x - this.x, 2) + Math.pow(m.y - this.y, 2)) /
-              m.radius;
-          (this.size = this.baseSize + 6 * e),
-            (this.r = 148 + 107 * e),
-            (this.g = 163 - 56 * e),
-            (this.b = 184 - 77 * e),
-            (this.a = 0.6 + 0.4 * e);
-        } else
-          (this.size = this.baseSize),
-            (this.r = 148),
-            (this.g = 163),
-            (this.b = 184),
-            (this.a = 0.6);
-      } else
-        (this.size = this.baseSize),
-          (this.r = 148),
-          (this.g = 163),
-          (this.b = 184),
-          (this.a = 0.6);
-    }
-  }
-  function h() {
-    g = [];
-    let e = (d * u) / 1e4;
-    for (let t = 0; t < e; t++) g.push(new f());
-  }
-  function b() {
-    l.clearRect(0, 0, d, u);
-    for (let e = 0; e < g.length; e++) {
-      g[e].update(), g[e].draw();
-      for (let t = e; t < g.length; t++) {
-        let n = g[e].x - g[t].x,
-          a = g[e].y - g[t].y;
-        if (Math.sqrt(n * n + a * a) < 120) {
-          l.beginPath();
-          let o =
-            1 -
-            Math.sqrt(
-              Math.pow(g[e].x - g[t].x, 2) + Math.pow(g[e].y - g[t].y, 2)
-            ) /
-              120;
-          g[e].r > 200 && g[t].r > 200
-            ? (l.strokeStyle = `rgba(255, 107, 107, ${1 * o})`)
-            : (l.strokeStyle = `rgba(148, 163, 184, ${0.4 * o})`),
-            (l.lineWidth = 0.6),
-            l.moveTo(g[e].x, g[e].y),
-            l.lineTo(g[t].x, g[t].y),
-            l.stroke();
-        }
-      }
-    }
-    requestAnimationFrame(b);
-  }
-  window.addEventListener("resize", () => {
-    p(), h();
-  }),
-    p(),
-    h(),
-    b();
-  // --- Efecto Tilt 3D para tarjeta ---
-  const y = document.getElementById("tiltCard");
-  y &&
-    (y.addEventListener("mousemove", (e) => {
-      const t = y.getBoundingClientRect(),
-        n = e.clientX - t.left,
-        a = e.clientY - t.top,
-        o = ((a - t.height / 2) / (t.height / 2)) * -5,
-        r = ((n - t.width / 2) / (t.width / 2)) * 5;
-      y.style.transform = `perspective(1000px) rotateX(${o}deg) rotateY(${r}deg) scale3d(1.02, 1.02, 1.02)`;
-    }),
-    y.addEventListener("mouseleave", () => {
-      y.style.transform =
-        "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
-    }));
+  initScrollReveal();
+  initNavbar();
+  initMobileMenu();
+  initProjectFilter();
+  initCalculator();
+  initFaqAccordion();
+  initContactForm();
+  initLegalModal();
 });
 
-// --- Función de Scroll para Carrusel ---
-function scrollCarousel(direction) {
-  const container = document.getElementById("projects-carousel");
-  if (!container) return;
+/* ============================================================
+   1. NATIVE INTERSECTION OBSERVER (Replaces expensive scroll loops)
+   ============================================================ */
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll(".reveal");
+  if (!revealElements.length) return;
 
-  // Calculamos el ancho de desplazamiento basado en el primer card o un valor fijo
-  const card = container.querySelector(".project-card");
-  const scrollAmount = card ? card.offsetWidth + 24 : 400; // 24 es el gap aproximado
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -40px 0px",
+      }
+    );
 
-  container.scrollBy({
-    left: scrollAmount * direction,
-    behavior: "smooth",
+    revealElements.forEach((el) => revealObserver.observe(el));
+  } else {
+    // Fallback for older browsers
+    revealElements.forEach((el) => el.classList.add("active"));
+  }
+}
+
+/* ============================================================
+   2. NAVBAR SCROLL STATE
+   ============================================================ */
+function initNavbar() {
+  const navbar = document.getElementById("navbar");
+  if (!navbar) return;
+
+  let ticking = false;
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (window.scrollY > 30) {
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
+}
+
+/* ============================================================
+   3. MOBILE NAVIGATION MENU
+   ============================================================ */
+function initMobileMenu() {
+  const toggleBtn = document.getElementById("mobileMenuToggle");
+  const panel = document.getElementById("mobileMenuPanel");
+  if (!toggleBtn || !panel) return;
+
+  toggleBtn.addEventListener("click", () => {
+    panel.classList.toggle("open");
+    const isOpen = panel.classList.contains("open");
+    toggleBtn.innerHTML = isOpen
+      ? '<i class="fas fa-times"></i>'
+      : '<i class="fas fa-bars"></i>';
+  });
+
+  panel.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      panel.classList.remove("open");
+      toggleBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+  });
+}
+
+/* ============================================================
+   4. PROJECT BENTO FILTER
+   ============================================================ */
+function initProjectFilter() {
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const projectCards = document.querySelectorAll(".bento-card");
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const category = btn.getAttribute("data-filter");
+
+      projectCards.forEach((card) => {
+        const cardCategory = card.getAttribute("data-category");
+        if (category === "all" || cardCategory === category) {
+          card.style.display = "flex";
+          setTimeout(() => {
+            card.style.opacity = "1";
+            card.style.transform = "translate3d(0, 0, 0)";
+          }, 10);
+        } else {
+          card.style.opacity = "0";
+          card.style.transform = "translate3d(0, 10px, 0)";
+          setTimeout(() => {
+            card.style.display = "none";
+          }, 200);
+        }
+      });
+    });
+  });
+}
+
+/* ============================================================
+   5. INTERACTIVE PROJECT SCOPE & BUDGET CALCULATOR
+   ============================================================ */
+function initCalculator() {
+  const pillOptions = document.querySelectorAll(".calc-pill");
+  const addonCheckboxes = document.querySelectorAll(".calc-checkbox-item");
+  const priceDisplay = document.getElementById("calcPriceDisplay");
+  const timelineDisplay = document.getElementById("calcTimelineDisplay");
+  const breakdownList = document.getElementById("calcBreakdownList");
+  const whatsappCta = document.getElementById("calcWhatsappBtn");
+
+  if (!priceDisplay || !timelineDisplay || !whatsappCta) return;
+
+  const projectTypes = {
+    landing: {
+      name: "Landing Page Ágil",
+      baseUSD: 85,
+      timeline: "3 a 5 días hábiles",
+    },
+    corporativo: {
+      name: "Sitio Corporativo Full",
+      baseUSD: 160,
+      timeline: "7 a 10 días hábiles",
+    },
+    ecommerce: {
+      name: "E-Commerce / Catálogo",
+      baseUSD: 240,
+      timeline: "2 a 3 semanas",
+    },
+    sistema: {
+      name: "Sistema Web / SAAS",
+      baseUSD: 320,
+      timeline: "3 a 4 semanas",
+    },
+    invitacion: {
+      name: "Invitación Web Interactiva",
+      baseUSD: 45,
+      timeline: "48 a 72 hs hábiles",
+    },
+  };
+
+  const addonsData = {
+    admin: { name: "Panel Admin Custom (CMS)", usd: 60 },
+    pagos: { name: "Pasarela de Pagos (MercadoPago/Stripe)", usd: 40 },
+    seo: { name: "SEO Avanzado & Analytics", usd: 25 },
+    hosting: { name: "Hosting + Dominio 1 Año", usd: 35 },
+  };
+
+  let selectedType = "landing";
+  let activeAddons = new Set();
+
+  pillOptions.forEach((pill) => {
+    pill.addEventListener("click", () => {
+      pillOptions.forEach((p) => p.classList.remove("active"));
+      pill.classList.add("active");
+      selectedType = pill.getAttribute("data-type");
+      updateCalculator();
+    });
+  });
+
+  addonCheckboxes.forEach((item) => {
+    item.addEventListener("click", () => {
+      const addonKey = item.getAttribute("data-addon");
+      if (activeAddons.has(addonKey)) {
+        activeAddons.delete(addonKey);
+        item.classList.remove("checked");
+      } else {
+        activeAddons.add(addonKey);
+        item.classList.add("checked");
+      }
+      updateCalculator();
+    });
+  });
+
+  function updateCalculator() {
+    const typeInfo = projectTypes[selectedType] || projectTypes.landing;
+    let total = typeInfo.baseUSD;
+    let itemsHTML = `
+      <div class="calc-breakdown-item">
+        <span>${typeInfo.name}</span>
+        <strong>USD $${typeInfo.baseUSD}</strong>
+      </div>
+    `;
+
+    let messageAddons = [];
+
+    activeAddons.forEach((key) => {
+      const addon = addonsData[key];
+      if (addon) {
+        total += addon.usd;
+        itemsHTML += `
+          <div class="calc-breakdown-item">
+            <span>+ ${addon.name}</span>
+            <span>USD $${addon.usd}</span>
+          </div>
+        `;
+        messageAddons.push(addon.name);
+      }
+    });
+
+    priceDisplay.textContent = `~ USD $${total}`;
+    timelineDisplay.innerHTML = `<i class="fas fa-clock"></i> Entrega estimada: ${typeInfo.timeline}`;
+    if (breakdownList) {
+      breakdownList.innerHTML = itemsHTML;
+    }
+
+    // Build pre-populated WhatsApp message
+    let waText = `¡Hola Alfa Digital! Estuve usando el cotizador de su web y me interesa el siguiente proyecto:\n\n`;
+    waText += `📌 *Tipo de Proyecto:* ${typeInfo.name}\n`;
+    if (messageAddons.length > 0) {
+      waText += `➕ *Adicionales:* ${messageAddons.join(", ")}\n`;
+    }
+    waText += `⏱ *Plazo aproximado:* ${typeInfo.timeline}\n`;
+    waText += `💰 *Presupuesto base estimado:* USD $${total}\n\n`;
+    waText += `¿Podríamos coordinar una breve llamada o chat para hablar de los detalles?`;
+
+    whatsappCta.href = `https://wa.me/5492614994711?text=${encodeURIComponent(waText)}`;
+  }
+
+  // Initial calculation
+  updateCalculator();
+}
+
+/* ============================================================
+   6. FAQ ACCORDION
+   ============================================================ */
+function initFaqAccordion() {
+  const faqItems = document.querySelectorAll(".faq-item");
+  faqItems.forEach((item) => {
+    const questionBtn = item.querySelector(".faq-question-btn");
+    if (!questionBtn) return;
+
+    questionBtn.addEventListener("click", () => {
+      const isOpen = item.classList.contains("open");
+
+      // Optional: close other open items for a clean single-open feel
+      faqItems.forEach((other) => other.classList.remove("open"));
+
+      if (!isOpen) {
+        item.classList.add("open");
+      }
+    });
+  });
+}
+
+/* ============================================================
+   7. CONTACT FORM SUBMISSION HANDLER
+   ============================================================ */
+function initContactForm() {
+  const form = document.getElementById("contactForm");
+  const feedback = document.getElementById("formFeedbackMsg");
+  if (!form || !feedback) return;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerHTML;
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+
+    const formData = new FormData(form);
+
+    fetch("https://formsubmit.co/ajax/alfa.digital.arg@gmail.com", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then(() => {
+        feedback.classList.add("show");
+        feedback.innerHTML =
+          '<i class="fas fa-check-circle"></i> ¡Mensaje recibido con éxito! Te responderemos en menos de 24 horas.';
+        form.reset();
+      })
+      .catch((err) => {
+        console.error("Form error:", err);
+        feedback.classList.add("show");
+        feedback.style.borderColor = "#ef4444";
+        feedback.style.color = "#ef4444";
+        feedback.style.background = "rgba(239, 68, 68, 0.1)";
+        feedback.innerHTML =
+          '<i class="fas fa-exclamation-circle"></i> Ocurrió un error al enviar. Por favor contáctanos directamente vía WhatsApp.';
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      });
+  });
+}
+
+/* ============================================================
+   8. LEGAL & PRIVACY MODAL SYSTEM
+   ============================================================ */
+function initLegalModal() {
+  const modal = document.getElementById("legalModal");
+  const title = document.getElementById("legalModalTitle");
+  const body = document.getElementById("legalModalBody");
+  const closeBtn = document.getElementById("legalModalClose");
+  const confirmBtn = document.getElementById("legalModalConfirm");
+
+  if (!modal || !title || !body) return;
+
+  const legalContent = {
+    terms: {
+      title: "Términos del Servicio",
+      body: `
+        <p><strong>1. Propuesta y Alcance:</strong> Cada proyecto se ejecuta bajo especificaciones técnicas acordadas formalmente en la propuesta de trabajo previa al inicio.</p>
+        <p><strong>2. Propiedad Intelectual:</strong> Tras la liquidación final del proyecto, el cliente retiene el 100% de los derechos de propiedad intelectual del código fuente, diseño y activos desarrollados.</p>
+        <p><strong>3. Garantía y Mantenimiento:</strong> Incluimos un período de garantía post-lanzamiento de 30 días corridos para corrección de incidencias o bugs sin costo adicional.</p>
+        <p><strong>4. Confidencialidad:</strong> Nos comprometemos a mantener bajo estricta confidencialidad toda la información estratégica y datos provistos por el cliente.</p>
+      `,
+    },
+    privacy: {
+      title: "Política de Privacidad",
+      body: `
+        <p><strong>1. Uso de Datos:</strong> Los datos de contacto provistos a través de nuestro formulario o canal de WhatsApp se utilizan exclusivamente para responder consultas y elaborar propuestas comerciales.</p>
+        <p><strong>2. No Tercerización:</strong> Alfa Digital no vende, comparte ni cede información personal ni corporativa a terceras partes bajo ninguna circunstancia.</p>
+        <p><strong>3. Seguridad:</strong> Implementamos estándares modernos de seguridad y encriptación en todos los sistemas y despliegues web que administramos.</p>
+      `,
+    },
+    cookies: {
+      title: "Política de Cookies",
+      body: `
+        <p>Este sitio web utiliza exclusivamente cookies técnicas esenciales y métricas anónimas de rendimiento para asegurar una navegación rápida, fluida y sin interrupciones.</p>
+        <p>Puedes gestionar o bloquear cookies en cualquier momento desde las preferencias de tu navegador web sin afectar la funcionalidad básica del sitio.</p>
+      `,
+    },
+  };
+
+  window.openLegalModal = function (type) {
+    const data = legalContent[type] || legalContent.terms;
+    title.textContent = data.title;
+    body.innerHTML = data.body;
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden";
+  };
+
+  window.closeLegalModal = function () {
+    modal.classList.remove("open");
+    document.body.style.overflow = "";
+  };
+
+  if (closeBtn) closeBtn.addEventListener("click", closeLegalModal);
+  if (confirmBtn) confirmBtn.addEventListener("click", closeLegalModal);
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeLegalModal();
+    }
   });
 }

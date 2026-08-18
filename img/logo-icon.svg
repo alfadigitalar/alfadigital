@@ -1,0 +1,13 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Left Leg (Crisp White for Dark Backgrounds) -->
+  <path d="M25 12 L5 54.5 L22.5 54.5 L30 26.875 Z" fill="#FFFFFF"/>
+
+  <!-- Right Leg (Crisp White for Dark Backgrounds) -->
+  <path d="M35 12 L55 54.5 L37.5 54.5 L30 26.875 Z" fill="#FFFFFF"/>
+
+  <!-- Accent Triangle (Vibrant Vermilion) -->
+  <path d="M30 33.25 L40 43.875 L20 43.875 Z" fill="#FF4D36"/>
+
+  <!-- Top Dot (Vibrant Vermilion) -->
+  <circle cx="30" cy="7" r="3.2" fill="#FF4D36"/>
+</svg>
