@@ -2053,6 +2053,13 @@ img, svg {
   box-shadow: 0 12px 30px rgba(37, 211, 102, 0.55);
 }
 
+/* --- Scroll Lock Utility --- */
+html.scroll-locked,
+body.scroll-locked {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
 /* --- Legal Modal --- */
 .modal-overlay {
   display: none;
@@ -2065,6 +2072,7 @@ img, svg {
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  overscroll-behavior: contain;
 }
 
 .modal-overlay.open {
@@ -2122,6 +2130,7 @@ img, svg {
   color: var(--text-secondary);
   line-height: 1.6;
   width: 100%;
+  overscroll-behavior: contain;
 }
 
 .modal-body p {

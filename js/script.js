@@ -481,12 +481,14 @@ function initLegalModal() {
     title.textContent = data.title;
     body.innerHTML = data.body;
     modal.classList.add("open");
-    document.body.style.overflow = "hidden";
+    document.documentElement.classList.add("scroll-locked");
+    document.body.classList.add("scroll-locked");
   }
 
   function closeModal() {
     modal.classList.remove("open");
-    document.body.style.overflow = "";
+    document.documentElement.classList.remove("scroll-locked");
+    document.body.classList.remove("scroll-locked");
   }
 
   if (privacyBtn) {
