@@ -7,12 +7,80 @@ document.addEventListener("DOMContentLoaded", () => {
   initScrollReveal();
   initNavbar();
   initMobileMenu();
+  initHeroProjectSwitcher();
   initProjectFilter();
   initCalculator();
   initFaqAccordion();
   initContactForm();
   initLegalModal();
 });
+
+/* ============================================================
+   0. HERO INTERACTIVE PROJECT PREVIEW SWITCHER
+   ============================================================ */
+function initHeroProjectSwitcher() {
+  const tabs = document.querySelectorAll(".preview-tab");
+  const imgEl = document.getElementById("heroPreviewImg");
+  const titleEl = document.getElementById("heroPreviewTitle");
+  const descEl = document.getElementById("heroPreviewDesc");
+  const pathEl = document.getElementById("heroPreviewPath");
+  const tagsEl = document.getElementById("heroPreviewTags");
+
+  if (!tabs.length || !imgEl || !titleEl || !descEl || !pathEl) return;
+
+  const projectData = {
+    utnhub: {
+      path: "alfadigital.studio/utn-hub",
+      img: "img/utnhub.png",
+      alt: "UTN Hub Preview",
+      title: "UTN Hub — Plataforma Universitaria",
+      desc: "Portal académico integral desarrollado para la comunidad de ingeniería de la UTN Mendoza, con miles de visitas mensuales.",
+      tags: ["React", "Next.js", "Cloudflare", "TailwindCSS"],
+    },
+    kubo: {
+      path: "alfadigital.studio/kubo-pos",
+      img: "img/kubo.webp",
+      alt: "Kubo POS Preview",
+      title: "Kubo POS — Sistema de Punto de Venta",
+      desc: "Software comercial y gastronómico para control de pedidos, comandas, mesas y facturación en tiempo real con 0 latencia.",
+      tags: ["React", "Node.js", "PostgreSQL", "TailwindCSS"],
+    },
+    mila: {
+      path: "alfadigital.studio/mila-crush",
+      img: "img/mila-crush-preview.webp",
+      alt: "Mila Crush Preview",
+      title: "Mila Crush — Catálogo & Pedidos Online",
+      desc: "Experiencia web gastronómica de alta conversión con sincronización directa de pedidos a WhatsApp y carga ultra-rápida.",
+      tags: ["Next.js", "TypeScript", "TailwindCSS", "WhatsApp API"],
+    },
+  };
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
+      const key = tab.getAttribute("data-preview");
+      const data = projectData[key];
+      if (!data) return;
+
+      imgEl.style.opacity = "0.3";
+      imgEl.style.transition = "opacity 0.18s ease";
+      setTimeout(() => {
+        imgEl.src = data.img;
+        imgEl.alt = data.alt;
+        pathEl.textContent = data.path;
+        titleEl.textContent = data.title;
+        descEl.textContent = data.desc;
+        if (tagsEl) {
+          tagsEl.innerHTML = data.tags
+            .map((t) => `<span class="tag-badge">${t}</span>`)
+            .join("");
+        }
+        imgEl.style.opacity = "1";
+      }, 150);
+    });
+  });
+}
 
 /* ============================================================
    1. NATIVE INTERSECTION OBSERVER (Replaces expensive scroll loops)

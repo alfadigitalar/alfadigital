@@ -55,12 +55,13 @@
       <!-- Menú Desktop -->
       <nav aria-label="Navegación principal">
         <ul class="nav-links">
+          <li><a href="#diferencia" class="nav-link">Por qué nosotros</a></li>
           <li><a href="#servicios" class="nav-link">Servicios</a></li>
+          <li><a href="#proceso" class="nav-link">Metodología</a></li>
           <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
           <li><a href="#cotizador" class="nav-link">Cotizador</a></li>
           <li><a href="#equipo" class="nav-link">Equipo</a></li>
           <li><a href="#planes" class="nav-link">Planes</a></li>
-          <li><a href="#contacto" class="nav-link">Contacto</a></li>
         </ul>
       </nav>
 
@@ -80,10 +81,12 @@
   <!-- Panel Menú Móvil (Drawer independiente) -->
   <div class="mobile-menu-panel" id="mobileMenuPanel">
     <ul class="mobile-nav-list">
-      <li><a href="#servicios" class="mobile-nav-link">Servicios</a></li>
-      <li><a href="#proyectos" class="mobile-nav-link">Proyectos Destacados</a></li>
+      <li><a href="#diferencia" class="mobile-nav-link">¿Por qué Alfa Digital?</a></li>
+      <li><a href="#servicios" class="mobile-nav-link">Servicios & Soluciones</a></li>
+      <li><a href="#proceso" class="mobile-nav-link">Metodología de Trabajo</a></li>
+      <li><a href="#proyectos" class="mobile-nav-link">Proyectos Reales</a></li>
       <li><a href="#cotizador" class="mobile-nav-link">Cotizador Interactivo</a></li>
-      <li><a href="#equipo" class="mobile-nav-link">Nuestro Equipo</a></li>
+      <li><a href="#equipo" class="mobile-nav-link">Quiénes Programan Tu Web</a></li>
       <li><a href="#planes" class="mobile-nav-link">Planes & Tarifas</a></li>
       <li><a href="#faq" class="mobile-nav-link">Preguntas Frecuentes</a></li>
       <li><a href="#contacto" class="mobile-nav-link" style="color: var(--accent-core);">Contacto Directo</a></li>
@@ -99,16 +102,15 @@
           <div class="hero-content">
             <div class="reveal status-badge">
               <span class="status-dot"></span>
-              <span>Mendoza, AR • Disponibles para nuevos proyectos</span>
+              <span>Mendoza, AR • Cupos abiertos Q3/Q4 • Trato directo con fundadores</span>
             </div>
 
             <h1 class="reveal reveal-delay-1 hero-title">
-              Desarrollo de software y diseño web con <span class="highlight">criterio de ingeniería</span>.
+              Webs y software a medida que cargan al instante y <span class="highlight">convierten visitas en clientes</span>.
             </h1>
 
             <p class="reveal reveal-delay-2 hero-description">
-              Construimos aplicaciones web de alto rendimiento, sistemas a medida y experiencias digitales que generan
-              tracción real. Sin plantillas genéricas ni atajos técnicos.
+              Somos <strong>Facundo</strong> y <strong>Alma</strong>, estudiantes de Ingeniería en Sistemas en la <strong>UTN Mendoza</strong>. No usamos plantillas lentas de WordPress ni constructores genéricos. Programamos código limpio, ultra-rápido y con soporte directo.
             </p>
 
             <div class="reveal reveal-delay-3 hero-actions">
@@ -118,27 +120,27 @@
               </a>
               <a href="#proyectos" class="btn btn-secondary btn-lg">
                 <i class="fas fa-layer-group"></i>
-                <span>Ver Trabajos</span>
+                <span>Ver Proyectos Reales</span>
               </a>
             </div>
 
             <div class="reveal reveal-delay-4 hero-metrics">
               <div class="metric-item">
-                <span class="metric-number">&lt; 0.8<span class="accent">s</span></span>
-                <span class="metric-label">Tiempo de Carga Promedio</span>
+                <span class="metric-number">100<span class="accent">/100</span></span>
+                <span class="metric-label">Google PageSpeed Score</span>
               </div>
               <div class="metric-item">
-                <span class="metric-number">100<span class="accent">%</span></span>
-                <span class="metric-label">Código a Medida & Propio</span>
+                <span class="metric-number">0<span class="accent">%</span></span>
+                <span class="metric-label">Plantillas Genéricas</span>
               </div>
               <div class="metric-item">
-                <span class="metric-number">+5<span class="accent">k</span></span>
-                <span class="metric-label">Usuarios en Plataformas Live</span>
+                <span class="metric-number">50<span class="accent">/50</span></span>
+                <span class="metric-label">Pago Contra Entrega Conforme</span>
               </div>
             </div>
           </div>
 
-          <!-- Showcase Visual del Hero -->
+          <!-- Showcase Visual del Hero (Ventana Interactiva) -->
           <div class="hero-visual reveal reveal-delay-2">
             <div class="studio-card-preview">
               <div class="studio-card-header">
@@ -147,17 +149,27 @@
                   <span class="window-dot yellow"></span>
                   <span class="window-dot green"></span>
                 </div>
-                <span class="window-path">alfadigital.studio/utn-hub</span>
-                <span class="tag-badge">Live Build</span>
+                
+                <!-- Selector de Proyectos en Vivo -->
+                <div class="hero-preview-tabs">
+                  <button type="button" class="preview-tab active" data-preview="utnhub">UTN Hub</button>
+                  <button type="button" class="preview-tab" data-preview="kubo">Kubo POS</button>
+                  <button type="button" class="preview-tab" data-preview="mila">Mila Crush</button>
+                </div>
+
+                <span class="tag-badge"><i class="fas fa-bolt text-accent" style="color: var(--accent-core); margin-right: 4px;"></i> Live Build</span>
               </div>
+              
               <div class="studio-card-body">
                 <div class="featured-project-box">
-                  <img src="img/utnhub.png" alt="UTN Hub Preview" width="600" height="340" loading="eager" />
+                  <img id="heroPreviewImg" src="img/utnhub.png" alt="UTN Hub Preview" width="600" height="340" loading="eager" />
                   <div class="featured-project-info">
-                    <h3 class="title">UTN Hub — Plataforma Universitaria</h3>
-                    <p class="desc">Sistema integral desarrollado para la comunidad estudiantil de ingeniería con miles
-                      de visitas mensuales activas.</p>
-                    <div class="tech-tags-list">
+                    <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.25rem;">
+                      <h3 class="title" id="heroPreviewTitle" style="margin-bottom: 0;">UTN Hub — Plataforma Universitaria</h3>
+                      <span class="window-path" id="heroPreviewPath" style="font-size: 0.7rem;">alfadigital.studio/utn-hub</span>
+                    </div>
+                    <p class="desc" id="heroPreviewDesc">Portal académico integral desarrollado para la comunidad de ingeniería de la UTN Mendoza, con miles de visitas mensuales.</p>
+                    <div class="tech-tags-list" id="heroPreviewTags">
                       <span class="tag-badge">React</span>
                       <span class="tag-badge">Next.js</span>
                       <span class="tag-badge">Cloudflare</span>
@@ -180,7 +192,7 @@
         <div class="ticker-item"><i class="fab fa-node-js"></i> Node.js <span class="sep">■</span></div>
         <div class="ticker-item"><i class="fas fa-database"></i> PostgreSQL & SQL <span class="sep">■</span></div>
         <div class="ticker-item"><i class="fab fa-figma"></i> UI/UX Design <span class="sep">■</span></div>
-        <div class="ticker-item"><i class="fas fa-bolt"></i> Rendimiento 120 FPS <span class="sep">■</span></div>
+        <div class="ticker-item"><i class="fas fa-bolt"></i> Carga &lt; 0.8s <span class="sep">■</span></div>
         <div class="ticker-item"><i class="fas fa-cloud"></i> Serverless & Edge <span class="sep">■</span></div>
         <div class="ticker-item"><i class="fas fa-chart-line"></i> SEO Técnico <span class="sep">■</span></div>
         <!-- Duplicado para loop continuo suave -->
@@ -189,21 +201,85 @@
         <div class="ticker-item"><i class="fab fa-node-js"></i> Node.js <span class="sep">■</span></div>
         <div class="ticker-item"><i class="fas fa-database"></i> PostgreSQL & SQL <span class="sep">■</span></div>
         <div class="ticker-item"><i class="fab fa-figma"></i> UI/UX Design <span class="sep">■</span></div>
-        <div class="ticker-item"><i class="fas fa-bolt"></i> Rendimiento 120 FPS <span class="sep">■</span></div>
+        <div class="ticker-item"><i class="fas fa-bolt"></i> Carga &lt; 0.8s <span class="sep">■</span></div>
         <div class="ticker-item"><i class="fas fa-cloud"></i> Serverless & Edge <span class="sep">■</span></div>
         <div class="ticker-item"><i class="fas fa-chart-line"></i> SEO Técnico <span class="sep">■</span></div>
       </div>
     </div>
 
+    <!-- Sección: Por qué Alfa Digital vs Agencias Tradicionales -->
+    <section class="section" id="diferencia" style="background-color: var(--bg-surface-2); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-header centered reveal">
+          <span class="section-overline">Ingeniería vs Plantillas</span>
+          <h2 class="section-title">¿Por qué las páginas genéricas no venden?</h2>
+          <p class="section-subtitle">
+            La mayoría de las agencias te cobran caro por instalar una plantilla de WordPress que tarda 6 segundos en abrir. Nosotros construimos software y webs que funcionan.
+          </p>
+        </div>
+
+        <div class="comparison-grid reveal">
+          <!-- Tarjeta Agencias Comunes -->
+          <div class="comparison-card standard">
+            <span class="comparison-card-badge">Agencias Tradicionales</span>
+            <h3 class="comparison-card-title">Plantillas & Atajos</h3>
+            <p class="comparison-card-subtitle">Soluciones genéricas que terminan costando caro.</p>
+            <ul class="comparison-list">
+              <li>
+                <i class="fas fa-times"></i>
+                <span><strong>Plantillas lentas:</strong> Webs pesadas en WordPress con decenas de plugins innecesarios.</span>
+              </li>
+              <li>
+                <i class="fas fa-times"></i>
+                <span><strong>Intermediarios y demoras:</strong> Hablas con ejecutivos de cuenta en vez de los desarrolladores.</span>
+              </li>
+              <li>
+                <i class="fas fa-times"></i>
+                <span><strong>Costos ocultos y ataduras:</strong> Cobros mensuales obligatorios para no perder el acceso a tu web.</span>
+              </li>
+              <li>
+                <i class="fas fa-times"></i>
+                <span><strong>Diseños clónicos:</strong> Tu negocio se ve idéntico al de 50 competidores.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tarjeta Alfa Digital -->
+          <div class="comparison-card highlight">
+            <span class="comparison-card-badge">Estudio Alfa Digital</span>
+            <h3 class="comparison-card-title">Código Propio & Alto Impacto</h3>
+            <p class="comparison-card-subtitle">Tecnología de punta pensada para captar clientes reales.</p>
+            <ul class="comparison-list">
+              <li>
+                <i class="fas fa-check"></i>
+                <span><strong>Velocidad extrema (&lt; 0.8s):</strong> Desarrollado en React/Next.js que abre al instante en cualquier celular.</span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span><strong>Trato directo con los ingenieros:</strong> Hablas directo por WhatsApp con Facundo y Alma sin vueltas.</span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span><strong>100% de tu propiedad:</strong> Código fuente, accesos, dominio y hosting a tu nombre sin licencias cautivas.</span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span><strong>Garantía 50/50:</strong> Pagas el 50% inicial y el 50% restante solo cuando la web esté 100% conforme.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Sección de Servicios -->
     <section class="section" id="servicios">
       <div class="container">
         <div class="section-header centered reveal">
-          <span class="section-overline">Capacidades del Estudio</span>
-          <h2 class="section-title">Soluciones digitales pensadas para escalar</h2>
+          <span class="section-overline">Servicios del Estudio</span>
+          <h2 class="section-title">Lo que podemos construir para tu negocio</h2>
           <p class="section-subtitle">
-            Combinamos diseño centrado en el usuario con arquitectura de software sólida para entregar productos
-            rápidos, seguros y fáciles de mantener.
+            Soluciones reales para vender más, ordenar tu operación o destacar en tu evento.
           </p>
         </div>
 
@@ -211,17 +287,16 @@
           <!-- Servicio 1 -->
           <div class="service-card reveal">
             <div class="service-icon-box">
-              <i class="fas fa-code"></i>
+              <i class="fas fa-laptop-code"></i>
             </div>
-            <h3 class="service-title">Desarrollo Web & Full Stack</h3>
+            <h3 class="service-title">Landing Pages & Webs Comerciales</h3>
             <p class="service-desc">
-              Desde landing pages orientadas a conversión hasta portales y aplicaciones web complejas con código limpio,
-              modular y optimizado para motores de búsqueda.
+              Sitios diseñados con un objetivo claro: que cuando un cliente entre desde Instagram, Google o un anuncio, te escriba a WhatsApp en menos de 10 segundos.
             </p>
             <ul class="service-features">
-              <li><i class="fas fa-chevron-right"></i> Arquitectura moderna en React y Next.js</li>
-              <li><i class="fas fa-chevron-right"></i> Cargas sub-segundo y SEO técnico 95+</li>
-              <li><i class="fas fa-chevron-right"></i> Integración fluida de APIs y bases de datos</li>
+              <li><i class="fas fa-check"></i> Código limpio en React/Next.js sin constructores lentos</li>
+              <li><i class="fas fa-check"></i> Botón flotante a WhatsApp y formulario directo a email</li>
+              <li><i class="fas fa-check"></i> 100% adaptable a teléfonos y velocidad extrema</li>
             </ul>
           </div>
 
@@ -230,33 +305,70 @@
             <div class="service-icon-box">
               <i class="fas fa-cubes"></i>
             </div>
-            <h3 class="service-title">Sistemas a Medida & POS</h3>
+            <h3 class="service-title">Sistemas a Medida, POS & E-Commerce</h3>
             <p class="service-desc">
-              Software interno, sistemas de punto de venta, paneles de control administrativos y automatización de
-              operaciones diseñados exactamente para tu flujo de trabajo.
+              Software para automatizar tu negocio: control de pedidos, comandas para gastronomía, cobros automáticos con MercadoPago y administración de stock.
             </p>
             <ul class="service-features">
-              <li><i class="fas fa-chevron-right"></i> Control de inventario, stock y facturación</li>
-              <li><i class="fas fa-chevron-right"></i> Roles de usuarios y seguridad robusta</li>
-              <li><i class="fas fa-chevron-right"></i> Paneles de analítica en tiempo real</li>
+              <li><i class="fas fa-check"></i> Catálogo online con pasarela de pagos integrada</li>
+              <li><i class="fas fa-check"></i> Panel de control privado para cargar productos y ventas</li>
+              <li><i class="fas fa-check"></i> Notificaciones de compras directas a WhatsApp</li>
             </ul>
           </div>
 
           <!-- Servicio 3 -->
           <div class="service-card reveal reveal-delay-2">
             <div class="service-icon-box">
-              <i class="fas fa-wand-magic-sparkles"></i>
+              <i class="fas fa-envelope-open-text"></i>
             </div>
-            <h3 class="service-title">UI/UX & Diseño de Producto</h3>
+            <h3 class="service-title">Invitaciones Web Interactivas (RSVP)</h3>
             <p class="service-desc">
-              Diseño de interfaces intuitivas, sistemas de diseño coherentes y prototipos interactivos que elevan la
-              percepción de valor de tu marca y reducen la fricción.
+              Invitaciones digitales de alta fidelidad para casamientos, quince años y eventos. Con música, cuenta regresiva, confirmación de asistencia y mapa GPS.
             </p>
             <ul class="service-features">
-              <li><i class="fas fa-chevron-right"></i> Prototipado y wireframing en Figma</li>
-              <li><i class="fas fa-chevron-right"></i> Micro-interacciones y diseño responsivo</li>
-              <li><i class="fas fa-chevron-right"></i> Identidad visual y sistemas de diseño</li>
+              <li><i class="fas fa-check"></i> Confirmación de invitados directa a WhatsApp o Excel</li>
+              <li><i class="fas fa-check"></i> Galería de fotos, código de vestimenta y cuenta bancaria</li>
+              <li><i class="fas fa-check"></i> Entrega ultra-rápida en 48 a 72 horas</li>
             </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Proceso de Trabajo Real -->
+    <section class="section" id="proceso" style="border-top: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-header centered reveal">
+          <span class="section-overline">Metodología Clara</span>
+          <h2 class="section-title">Cómo trabajamos de verdad (Paso a Paso)</h2>
+          <p class="section-subtitle">
+            Un proceso transparente y sin sorpresas técnicas para que sepas exactamente qué esperar en cada etapa.
+          </p>
+        </div>
+
+        <div class="process-grid reveal">
+          <div class="process-card">
+            <span class="process-number">01</span>
+            <h4 class="process-title">Diagnóstico & Wireframe</h4>
+            <p class="process-desc">Charlamos por WhatsApp o videollamada para entender tu negocio y te armamos la propuesta inicial sin costo.</p>
+          </div>
+
+          <div class="process-card">
+            <span class="process-number">02</span>
+            <h4 class="process-title">Desarrollo en Código</h4>
+            <p class="process-desc">Programamos la web desde cero con diseño exclusivo, asegurando velocidad máxima y compatibilidad móvil.</p>
+          </div>
+
+          <div class="process-card">
+            <span class="process-number">03</span>
+            <h4 class="process-title">Revisión en Vivo</h4>
+            <p class="process-desc">Te pasamos un link de prueba privado para que pruebes todo y hagamos los ajustes necesarios hasta que quede 100% conforme.</p>
+          </div>
+
+          <div class="process-card">
+            <span class="process-number">04</span>
+            <h4 class="process-title">Lanzamiento Total</h4>
+            <p class="process-desc">Conectamos tu dominio, configuramos tus correos y te entregamos todos los accesos. ¡Tu web ya está vendiendo!</p>
           </div>
         </div>
       </div>
