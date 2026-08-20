@@ -314,7 +314,7 @@ function initCalculator() {
     waText += `💰 *Presupuesto base estimado:* USD $${total}\n\n`;
     waText += `¿Podríamos coordinar una breve llamada o chat para hablar de los detalles?`;
 
-    whatsappCta.href = `https://wa.me/5492614994711?text=${encodeURIComponent(waText)}`;
+    whatsappCta.href = `https://wa.me/5492615790969?text=${encodeURIComponent(waText)}`;
   }
 
   // Initial calculation
@@ -433,7 +433,7 @@ function initLegalModal() {
 
           <div>
             <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 0.35rem;">6. Derechos de Acceso y Supresión</h4>
-            <p>Tienes derecho en cualquier momento a solicitar el acceso, rectificación, actualización o eliminación definitiva de tus datos de contacto escribiéndonos a <a href="mailto:alfa.digital.arg@gmail.com" style="color: var(--accent-core); text-decoration: underline;">alfa.digital.arg@gmail.com</a> o por WhatsApp al <strong>+54 9 261 499-4711</strong>.</p>
+            <p>Tienes derecho en cualquier momento a solicitar el acceso, rectificación, actualización o eliminación definitiva de tus datos de contacto escribiéndonos a <a href="mailto:alfa.digital.arg@gmail.com" style="color: var(--accent-core); text-decoration: underline;">alfa.digital.arg@gmail.com</a> o por WhatsApp al <strong>+54 9 2615 79-0969</strong>.</p>
           </div>
         </div>
       `,
