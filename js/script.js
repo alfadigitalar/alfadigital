@@ -43,7 +43,7 @@ function initHeroProjectSwitcher() {
       alt: "Kubo POS Preview",
       title: "Kubo POS — Sistema de Punto de Venta",
       desc: "Software comercial y gastronómico para control de pedidos, comandas, mesas y facturación en tiempo real con 0 latencia.",
-      tags: ["React", "Node.js", "PostgreSQL", "TailwindCSS"],
+      tags: ["React", "Node.js", "SQLite", "TailwindCSS"],
     },
     mila: {
       path: "alfadigital.studio/mila-crush",
